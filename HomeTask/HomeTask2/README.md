@@ -7,7 +7,7 @@ IDE -> IntelliJ
 > This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
 > Another section will be added to run this on Windows.
 
-> [!Importand]:
+> [!Importan]:
 > Run Intructions
 > 1. Open the file location where it is stored.
 > 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
