@@ -18,7 +18,9 @@ IDE -> IntelliJ
 >   Ctrl + T (most common one)
 >   Go to the file location
 > 3. Execute the file by using the following command
+>
 >    **javac Main.java**
+>    
 >    **java Main.java**
 
 > [!Note]
