@@ -5,16 +5,24 @@ Home Task was done to put to test learned skills, this can go from a input,
 
 IDE -> IntelliJ
 
-Run Intructions:
-1.- Open the file location where it is stored.
-2.- Open terminal
- a) Windows
-   a.1) Write 'CMD' on the file explorer to open the terminal on that exact location
- b) Linux
-   b.1) Ctrl + T (most common one)
-   b.2) Go to the file location
-3.- Execute the file by using the following command
-   "java Main.java"
+> [!Note]
+> This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
+> Another section will be added to run this on Windows.
+
+> [!Run Intructions]:
+> 1.- Open the file location where it is stored.
+> 2.1.- Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+> Or
+> 2.2.-
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 3.- Execute the file by using the following command
+>    **javac Main.java**
+>    **java Main.java**
+
+> [!Note]
+> Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
+> Java is used execute *run* the actual program.
 
 
 
