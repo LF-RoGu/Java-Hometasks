@@ -27,6 +27,7 @@ IDE -> IntelliJ
 
 > [!Note]
 > Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
+> 
 > Java is used execute *run* the actual program.
 
 How to run the program:
