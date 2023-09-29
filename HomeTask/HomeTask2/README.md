@@ -3,20 +3,42 @@
 
 IDE -> IntelliJ
 
+> [!Note]
+> This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
+> Another section will be added to run this on Windows.
+
+> [!Importand]:
+> Run Intructions
+> 1. Open the file location where it is stored.
+> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+> Or
+> 2.2.
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 3. Execute the file by using the following command
+>    **javac Main.java**
+>    **java Main.java**
+
+> [!Note]
+> Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
+> Java is used execute *run* the actual program.
+
+
+
 Run Intructions:
-1.- Open the file location where it is stored.
-2.- Open terminal
+1. Open the file location where it is stored.
+ Open terminal
  a) Windows
    a.1) Write 'CMD' on the file explorer to open the terminal on that exact location
  b) Linux
    b.1) Ctrl + T (most common one)
    b.2) Go to the file location
-3.- Execute the file by using the following command
+3. Execute the file by using the following command
    "java Main.java"
 
 How to run the program:
-1.- Select the number if cars to add to a list
-2.- Enter the information in the following order
+1. Select the number if cars to add to a list
+2. Enter the information in the following order
  a) Brand (Ford, Honda, BMW, etc...)
  b) ID (a number for the car)
  c) Model (Civic, ATV, Ryker, Pick up)
@@ -25,7 +47,7 @@ How to run the program:
  f) Price
  g) Registration number
  h) Repeat until the amount of cars has been completed.
-3.- Select on how do you want the list to be created according to the information provided.
+3. Select on how do you want the list to be created according to the information provided.
  a) List of cars given by a Brand (Ford, Honda, BMW, etc...)
  b) List of cars given by a model that has been in use for 'n' years
  c) List of cars given by year of manufacturer
