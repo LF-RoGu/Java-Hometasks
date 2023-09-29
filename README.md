@@ -14,11 +14,11 @@ IDE -> IntelliJ
 >
 > This command will check the current java version that it is running in the computer.
 > 
-> *archlinux-java status*
+> -*archlinux-java status*
 > 
 > This command will set the new version of java to run instead.
 >
-> *archlinux-java set <JAVA_ENV_NAME>*
+> -*archlinux-java set <JAVA_ENV_NAME>*
 
 > [!IMPORTANT]
 > Run Intructions
