@@ -18,7 +18,7 @@ public class Engine extends Vehicle
 
 class CombustionEngine extends Engine
 {
-    private enum l_enumCombustionVol
+    public enum l_enumCombustionVol
     {
         No_Engine,
         cc450,

@@ -1,5 +1,8 @@
 public class Manufacture extends Vehicle
 {
+    /*
+    All vehicles must have this type of information
+     */
     private int varCarsId;
     private String varCarsMake;
     private String varCarModel;
@@ -7,6 +10,9 @@ public class Manufacture extends Vehicle
     private String varCarColor;
     private int varCarPrice;
     private int varCarRegistrationNumber;
+    private int varCarType;
+    private int varCarEngineVolume;
+    private int varCarBatteryDistance;
 
     private int varCarUseYears;
 
@@ -46,6 +52,18 @@ public class Manufacture extends Vehicle
         return varCarRegistrationNumber;
     }
 
+    public int getVarCarType() {
+        return varCarType;
+    }
+
+    public int getVarCarEngineVolume() {
+        return varCarEngineVolume;
+    }
+
+    public int getVarCarBatteryDistance() {
+        return varCarBatteryDistance;
+    }
+
     public void setVarCarsId(int varCarsId) {
         this.varCarsId = varCarsId;
     }
@@ -72,5 +90,17 @@ public class Manufacture extends Vehicle
 
     public void setVarCarRegistrationNumber(int varCarRegistrationNumber) {
         this.varCarRegistrationNumber = varCarRegistrationNumber;
+    }
+
+    public void setVarCarType(int varCarType) {
+        this.varCarType = varCarType;
+    }
+
+    public void setVarCarEngineVolume(int varCarEngineVolume) {
+        this.varCarEngineVolume = varCarEngineVolume;
+    }
+
+    public void setVarCarBatteryDistance(int varCarBatteryDistance) {
+        this.varCarBatteryDistance = varCarBatteryDistance;
     }
 }

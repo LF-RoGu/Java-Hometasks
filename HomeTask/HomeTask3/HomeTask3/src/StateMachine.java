@@ -13,6 +13,8 @@ public class StateMachine
         CAR_COLOR,
         CAR_PRICE,
         CAR_REGISNUM,
+        CAR_TYPE,
+        CAR_ENGINEINFO,
         CHECK_INPUT,
         STORE_IN_FILE,
         FILE_CREATION,
