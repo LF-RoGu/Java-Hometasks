@@ -1,4 +1,4 @@
-public class Manufacture
+public class Manufacture extends Vehicle
 {
     private int varCarsId;
     private String varCarsMake;
