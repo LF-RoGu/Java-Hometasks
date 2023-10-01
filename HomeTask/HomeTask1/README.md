@@ -9,23 +9,7 @@ IDE -> IntelliJ
 > This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
 > Another section will be added to run this on Windows.
 
-> [!IMPORTANT]
-> Run Intructions
-> 1. Open the file location where it is stored.
-> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
->
-> Or
->
-> 2. Open a terminal
->    
->   Ctrl + T (most common one)
->   Go to the file location
-> 
-> 3. Execute the file by using the following command
->
->    **javac Main.java**
->    
->    **java Main.java**
+
 
 > [!Note]
 > Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
@@ -48,6 +32,24 @@ Given the diameter of Earth and Sun are the following:
 
 This methods return a double value. The units that was done for this where mts. Intead of miles, this to make easier to corroborate with external calculators and make sure that the return value was the correct one.
 
+> [!IMPORTANT]
+> Run Intructions
+> 1. Open the file location where it is stored.
+> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+>
+> Or
+>
+> 2. Open a terminal
+>    
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 
+> 3. Execute the file by using the following command
+>
+>    **javac Main.java**
+>    
+>    **java Main.java**
+
 ## Problem 2
 ### Control Flow Statements
 Control statement using labels, this are used specific to break the current statement, but not break the cycle. Refering as, to exit the current cycle and continue in the next step of the cycle. 
@@ -69,19 +71,62 @@ While (flag)
     }
 }
 
+> [!IMPORTANT]
+> Run Intructions
+> 1. Open the file location where it is stored.
+> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+>
+> Or
+>
+> 2. Open a terminal
+>    
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 
+> 3. Execute the file by using the following command
+>
+>    **javac Main.java**
+>    
+>    **java Main.java**
 
 
 ## Problem 3
 ### Object Basics and Simple Data Objects, The Life Cycle of an Object,Characters and Strings 
 Count the amount of vocals, spaces and consonants are in the stored string.
 
-For this logic a simple for cycle was suficient, where each character was checked. If it is a space a counter is increase, as well for the vowels. For the consonants a counter was made to check the total amount of letters that appear in the text. After all the letters are counter, for this variable the amount of vocals are substracted; this way the total amount of consonants are available.
+For this logic a simple for cycle was suficient, where each character was checked. If it is a space, a counter is increase and another counter for the vowels. 
+
+For the consonants a counter was made to check the total amount of letters that appear in the text. After all the letters are counter, for this variable the amount of vocals are substracted; this way the total amount of consonants are available.
+
+> [!IMPORTANT]
+> Run Intructions
+> 1. Open the file location where it is stored.
+> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+>
+> Or
+>
+> 2. Open a terminal
+>    
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 
+> 3. Execute the file by using the following command
+>
+>    **javac Main.java**
+>    
+>    **java Main.java**
+
+
 ## Problem 4
 ### Object Basics and Simple Data Objects
 Order the text in alphabetical order.
 
 A bubble sort method was implemened to arrange this words.
-This was done through 2 for cycles, the outer cycle is for the selection of the word in the string array. The second one is to compare and arrange if needed.
+
+This implementation was done in 2 stages:
+
+1. Separate the text in an array, so every word is in a position so it can be compared to the next word and so on.
+2. Implement the bubble sort method, there are 2 *for* cycles. One inside the other, in the first *for cycle* is for the selection of the word to compare. The second *for cycle* is to compare in the whole string and make the necessary swaps according to the logic.
 
 In the bubble sort method a temporal string was made to store the current word being checked.
 
@@ -94,6 +139,23 @@ b[j] = str[j+1];
 c[j+1] = a;
 
 
+> [!IMPORTANT]
+> Run Intructions
+> 1. Open the file location where it is stored.
+> 2. Open a terminal in this folder, this can be done by pressing *right click* and *open terminal here*.
+>
+> Or
+>
+> 2. Open a terminal
+>    
+>   Ctrl + T (most common one)
+>   Go to the file location
+> 
+> 3. Execute the file by using the following command
+>
+>    **javac Main.java**
+>    
+>    **java Main.java**
 
 ## Authors
 
