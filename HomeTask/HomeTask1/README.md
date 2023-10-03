@@ -5,6 +5,13 @@ Home Task was done to put to test learned skills, this can go from a input,
 
 IDE -> IntelliJ
 
+## Authors
+
+- [@LF-RoGu](https://github.com/LF-RoGu)
+- Name: Luis Fernando Rodriguez Gutierrez.
+- Matriculation Number: 7219085.
+- FHKennung: lurod001.
+
 > [!Note]
 > This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
 > Another section will be added to run this on Windows.
@@ -178,10 +185,3 @@ Order the text in alphabetical order.
 >    **javac Main.java**
 >    
 >    **java Main.java**
-
-## Authors
-
-- [@LF-RoGu](https://github.com/LF-RoGu)
-- Name: Luis Fernando Rodriguez Gutierrez.
-- Matriculation Number: 7219085.
-- FHKennung: lurod001.
