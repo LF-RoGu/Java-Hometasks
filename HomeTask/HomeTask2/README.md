@@ -3,6 +3,13 @@
 
 IDE -> IntelliJ
 
+## Authors
+
+- [@LF-RoGu](https://github.com/LF-RoGu)
+- Name: Luis Fernando Rodriguez Gutierrez.
+- Matriculation Number: 7219085.
+- FHKennung: lurod001.
+
 > [!Note]
 > This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
 > Another section will be added to run this on Windows.
@@ -77,12 +84,6 @@ This implementation was done through 3 total classes.
 
 The desition to use a state machin was primarly to continue learning java, as the implementation of a state machine can be re-used for other coding exercises for a more clean and controlled system.
 
-## Authors
-
-- [@LF-RoGu](https://github.com/LF-RoGu)
-- Name: Luis Fernando Rodriguez Gutierrez.
-- Matriculation Number: 7219085.
-- FHKennung: lurod001.
 
 ## Documentation
 
