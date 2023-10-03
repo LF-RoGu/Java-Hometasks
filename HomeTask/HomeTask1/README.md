@@ -20,17 +20,24 @@ IDE -> IntelliJ
 
 ## Problem 1
 ### Variables, Operators, Expressions, Statements, and Blocks 
-Calculate the Volume of a sphere.
-This was one by creating a class, specific to just return the values that where requested in the problem.
+Implement a method or methods to calculate the volume of a sphere given the information in this problem.
 
-* get_varVolumeEarth()
-* get_varVolumeSun()
+> ### Solution Implementation
+> A Class called *Volume.java* was created to store the implemented methods.
+> This methods are called:
+> * get_varVolumeEarth()
+> * get_varVolumeSun()
+>
+> For this problem there are 2 volumes to calculate, in which the radius of the spheres are provided:
+> * Sun -> 865,000 miles
+> * Earth -> 7,600 miles
+> This methods return a double value. The units that was done for this where mts. Intead of miles, this to make easier to corroborate with external calculators and make sure that the return value was the correct one.
+>
+> The output value of the Volume is in miles as requested in **Problem 1**; However this is printed in another statement, as it could be valuable to have both values, converted to mts and another that it is in miles.
+> 
+> Another thing to calculate is the ratio of the **Volume** between this 2 spheres.
+> For this implementation a relation (division) bewteen the 2 values was made, and then substract one from the other. This comparison is done between the Sun volume ratio and the Earth volume ratio. This considering that the Sun ratio will always be bigger that the earth.
 
-Given the diameter of Earth and Sun are the following:
-* Sun -> 865,000 miles
-* Earth -> 7,600 miles
-
-This methods return a double value. The units that was done for this where mts. Intead of miles, this to make easier to corroborate with external calculators and make sure that the return value was the correct one.
 
 > [!IMPORTANT]
 > Run Intructions
@@ -54,10 +61,17 @@ This methods return a double value. The units that was done for this where mts. 
 ### Control Flow Statements
 Control statement using labels, this are used specific to break the current statement, but not break the cycle. Refering as, to exit the current cycle and continue in the next step of the cycle. 
 
-If the operation module between the 2 values is equal to ZERO. Meaning the value is not a prime number.
-Then the current cycle should break, meaning we just abroutly stop current cycle to continue in the next one.
+The logic behind this control flow statements work as the following:
+> If a cycle of the flow of the code is cyclical and a certain condition is met that this *flow* needs to stop, but only for this specific cycle.
+> #### Explication
+> You are driving your car (driving is your *for/while cycle*), the you need to stop at a **red light**, but after this you don't stop driving you continue, you just need to make a stop of the current cycle.
+> Then this label's are put into work, you set your continion to activate this vale *(continue **label**)* then all future logic will not be run, but you will remain drivin (in your cycle)
 
-An equivalent explination logic is:
+
+> ### Solution Implementation
+> If the operation module between the 2 values is equal to ZERO. Meaning the value is not a prime number.
+> Then the current cycle should break, meaning we just abroutly stop current cycle to continue in the next one.
+> An equivalent explination logic is:
 
 While (flag)
 {
@@ -94,9 +108,17 @@ While (flag)
 ### Object Basics and Simple Data Objects, The Life Cycle of an Object,Characters and Strings 
 Count the amount of vocals, spaces and consonants are in the stored string.
 
-For this logic a simple for cycle was suficient, where each character was checked. If it is a space, a counter is increase and another counter for the vowels. 
-
-For the consonants a counter was made to check the total amount of letters that appear in the text. After all the letters are counter, for this variable the amount of vocals are substracted; this way the total amount of consonants are available.
+> ### Solution Implementation
+> For this logic a simple for cycle was suficient, where each character was checked. If it is a space, a counter is increase and another counter for the vowels.
+> Counters implemented:
+> * spaces
+> Check if the character is equal to ' '.
+> * vowels
+> Check if the character is between *a* & *z*
+>     *If the character is equal to a vowel then increase vocal counter
+> * letters
+> Check if the character is between *a* & *z*
+>     *If the character is not equal to a vowel then increase letter counter
 
 > [!IMPORTANT]
 > Run Intructions
