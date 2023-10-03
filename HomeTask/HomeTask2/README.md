@@ -10,10 +10,7 @@ IDE -> IntelliJ
 - Matriculation Number: 7219085.
 - FHKennung: lurod001.
 
-> [!Note]
-> This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
-> Another section will be added to run this on Windows.
-
+  
 > [!IMPORTANT]
 > Run Intructions
 > 1. Open the file location where it is stored.
@@ -36,6 +33,13 @@ IDE -> IntelliJ
 > Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
 > 
 > Java is used execute *run* the actual program.
+
+
+> [!Note]
+> This programs where run in a linux enviroment, so the main instructions will be on how to run in a linux enviroment.
+> Another section will be added to run this on Windows.
+
+
 
 How to run the program:
 1. Select the number if cars to add to a list
@@ -66,27 +70,22 @@ How to run the program:
    c) List of cars given by year of manufacturer
  
    d) List of cars given by price, highest to lowest.
+
+
  
  
-Develop a java program to insert a list of Cars where the fields are Brank, ID, Moel, Year Of Manufacture, Color, Price, Registratiion Number.
-
-This implementation was done through 3 total classes.
-* Main
-* Cars
-* StateMachine
-
-*Main* class, file where the implementation is run. Here the definition of the participants information was set and the objects of the other classes (Participants.java & StateMachine.java) where created.
-
-*Cars* class has the layout to fill the information needed, for example the setters are used to fill the information requested by the user; and the getters this to obtain the information of the array class 'Cars' so this can be printed in the terminal.
-
-*StateMachine* class is a simple file to make use of a Moore State Machine to make this program more automated. This while using a switch case to make the state machine go through, in this example the only use of the state machine class is to limit the possible jumps that can be done in the switch case (most simple state machine)
-
-
-The desition to use a state machin was primarly to continue learning java, as the implementation of a state machine can be re-used for other coding exercises for a more clean and controlled system.
-
-
-## Documentation
-
-![FlowChart](Java/Java_PreCheck/Java_PreCheck/png/PreCheck-Java.jpg)
-
-
+> Develop a java program to insert a list of Cars where the fields are Brank, ID, Moel, Year Of Manufacture, Color, Price, Registratiion Number.
+> 
+> This implementation was done through 3 total classes.
+> * Main
+> * Cars
+> * StateMachine
+> 
+> *Main* class, file where the implementation is run. Here the definition of the participants information was set and the objects of the other classes (Participants.java & StateMachine.java) where created.
+> 
+> *Cars* class has the layout to fill the information needed, for example the setters are used to fill the information requested by the user; and the getters this to obtain the information of the array class 'Cars' so this can be printed in the terminal.
+> 
+> *StateMachine* class is a simple file to make use of a Moore State Machine to make this program more automated. This while using a switch case to make the state machine go through, in this example the only use of the state machine class is to limit the possible jumps that can be done in the switch case (most simple state machine)
+> 
+> 
+> The usage of a state machin was primarly to continue learning java, as the implementation of a state machine can be re-used for other coding exercises for a more clean and controlled system.
