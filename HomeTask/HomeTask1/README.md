@@ -12,9 +12,11 @@ IDE -> IntelliJ
 
 
 > [!Note]
-> Javac is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
+> To run each of the problems one must access to each of the folders and run the sequence mention for each problem.
 > 
-> Java is used execute *run* the actual program.
+> **JAVAC** is used to compile the .java file and any other files in the folder (this can be other existing classes that are necessary for the program to run)
+> 
+> **JAVA** is used execute *run* the actual program.
 
 
 
