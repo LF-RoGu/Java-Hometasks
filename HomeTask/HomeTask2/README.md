@@ -43,17 +43,17 @@ How to run the program:
    
    a) Brand (Ford, Honda, BMW, etc...)
  
-   b) ID (a number for the car)
+   b) ID (Numbers Only)
  
    c) Model (Civic, ATV, Ryker, Pick up)
  
-   d) Year of manufacture
+   d) Year of manufacture (YYYY)
  
-   e) Color
+   e) Color (RED, BLUE, etc)
  
-   f) Price
+   f) Price (Insert the number directly, without comas)
  
-   g) Registration number
+   g) Registration number (Numbers Only)
  
    h) Repeat until the amount of cars has been completed.
  
