@@ -143,22 +143,20 @@ Count the amount of vocals, spaces and consonants are in the stored string.
 ### Object Basics and Simple Data Objects
 Order the text in alphabetical order.
 
-A bubble sort method was implemened to arrange this words.
+> ### Solution Implementation
+> A bubble sort method was implemened to arrange this words.
+> This implementation was done in 2 stages:
+> 1. Separate the text in an array, so every word is in a position so it can be compared to the next word and so on.
+> 2. Implement the bubble sort method, there are 2 *for* cycles. One inside the other, in the first *for cycle* is for the selection of the word to compare. The second *for cycle* is to compare in the whole string and make the necessary swaps according to the logic.
+> In the bubble sort method a temporal string was made to store the current word being checked.
 
-This implementation was done in 2 stages:
-
-1. Separate the text in an array, so every word is in a position so it can be compared to the next word and so on.
-2. Implement the bubble sort method, there are 2 *for* cycles. One inside the other, in the first *for cycle* is for the selection of the word to compare. The second *for cycle* is to compare in the whole string and make the necessary swaps according to the logic.
-
-In the bubble sort method a temporal string was made to store the current word being checked.
-
-This kinda works this way:
-
-a = str[i]; 
-
-b[j] = str[j+1];
-
-c[j+1] = a;
+> This kinda works this way:
+> 
+> a = str[i];
+> 
+> b[j] = str[j+1];
+> 
+> c[j+1] = a;
 
 
 > [!IMPORTANT]
