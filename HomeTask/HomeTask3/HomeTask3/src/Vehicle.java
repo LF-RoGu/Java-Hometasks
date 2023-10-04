@@ -25,6 +25,15 @@ class ICEV extends Vehicle
     void showCharacteristics()
     {
         System.out.println("--------------------------------------------");
+        
+        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
+        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
+        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
+        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
+        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
+        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
+        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
+
         System.out.println("-> Vehicle Type Characteristics... ICEV");
         System.out.println("-> Vehicle RPM Characteristics... " +  l_classCombustionEngine.get_intEngineRPM());
         System.out.println("-> Vehicle Torque Characteristics... " +  l_classCombustionEngine.get_intEngineTorque());
@@ -74,6 +83,15 @@ class BEV extends Vehicle
     void showCharacteristics()
     {
         System.out.println("--------------------------------------------");
+
+        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
+        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
+        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
+        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
+        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
+        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
+        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
+
         System.out.println("-> Vehicle Type Characteristics... BEV");
         System.out.println("-> Vehicle RPM Characteristics... " +  l_classElectricEngine.get_intEngineRPM());
         System.out.println("-> Vehicle Torque Characteristics... " +  l_classElectricEngine.get_intEngineTorque());
@@ -97,6 +115,15 @@ class HybridV extends Vehicle
     void showCharacteristics()
     {
         System.out.println("--------------------------------------------");
+
+        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
+        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
+        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
+        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
+        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
+        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
+        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
+
         System.out.println("-> Vehicle Type Characteristics... HybridV");
         System.out.println("-> Vehicle RPM Characteristics... " +  l_classHybridEngine.get_intEngineRPM());
         System.out.println("-> Vehicle Torque Characteristics... " +  l_classHybridEngine.get_intEngineTorque());
