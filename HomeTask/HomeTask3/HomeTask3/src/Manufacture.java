@@ -103,4 +103,9 @@ public class Manufacture extends Vehicle
     public void setVarCarBatteryDistance(int varCarBatteryDistance) {
         this.varCarBatteryDistance = varCarBatteryDistance;
     }
+
+    @Override
+    void showCharacteristics() {
+
+    }
 }

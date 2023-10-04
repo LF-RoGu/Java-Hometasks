@@ -14,6 +14,23 @@ public class Engine extends Vehicle
         this.l_intEngineTorque = l_intEngineTorque;
         this.l_floatEngineSize = l_floatEngineSize;
     }
+
+    public int get_intEngineRPM() {
+        return l_intEngineRPM;
+    }
+
+    public int get_intEngineTorque() {
+        return l_intEngineTorque;
+    }
+
+    public float get_floatEngineSize() {
+        return l_floatEngineSize;
+    }
+
+    @Override
+    void showCharacteristics() {
+
+    }
 }
 
 class CombustionEngine extends Engine
@@ -38,6 +55,10 @@ class CombustionEngine extends Engine
         super(l_intEngineRPM, l_intEngineTorque, l_floatEngineSize);
         this.l_enumCombustionVolType = l_enumCombustionVolType;
     }
+
+    public l_enumCombustionVol get_enumCombustionVolType() {
+        return l_enumCombustionVolType;
+    }
 }
 
 class ElectricEngine extends Engine
@@ -52,6 +73,10 @@ class ElectricEngine extends Engine
     public ElectricEngine(int l_intEngineRPM, int l_intEngineTorque, float l_floatEngineSize, int l_intBatteryDistance) {
         super(l_intEngineRPM, l_intEngineTorque, l_floatEngineSize);
         this.l_intBatteryDistance = l_intBatteryDistance;
+    }
+
+    public int get_intBatteryDistance() {
+        return l_intBatteryDistance;
     }
 }
 
@@ -68,5 +93,13 @@ class HybridEngine extends Engine
     public HybridEngine(CombustionEngine l_classCombustionEngine, ElectricEngine l_classElectricEngine) {
         this.l_classCombustionEngine = l_classCombustionEngine;
         this.l_classElectricEngine = l_classElectricEngine;
+    }
+
+    public CombustionEngine get_classCombustionEngine() {
+        return l_classCombustionEngine;
+    }
+
+    public ElectricEngine get_classElectricEngine() {
+        return l_classElectricEngine;
     }
 }
