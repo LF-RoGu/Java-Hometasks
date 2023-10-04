@@ -81,11 +81,21 @@ How to run the program:
 > * Cars
 > * StateMachine
 > 
-> *Main* class, file where the implementation is run. Here the definition of the participants information was set and the objects of the other classes (Participants.java & StateMachine.java) where created.
+> ***Main*** class.
+> > File where the implementation is run. Here the definition of the participants information was set and the objects of the other classes (Participants.java & StateMachine.java) where created.
+> > Here the *moore state machine* is implemented, where the user starts introducing the data to interact with the program.
+> > At the start it creates an Object array (class array) depending on how many different Vehicle the user wants to add.
+> > Here after the users inject the information the system moves to the next state of the StMchn, since the condition to move to the next step is a correct information to be added.
+> >
+> > After all the information is added (Of all the Vehicles) it checkes if all the requiered vehicles have been added. If this is the case then we move to the next StMchn.
+> > The system asks the user how it wants the information to be stored. (This is according to the HomeTask2 req)
+> > After the files are created successfully then the program comes to an end.
 > 
-> *Cars* class has the layout to fill the information needed, for example the setters are used to fill the information requested by the user; and the getters this to obtain the information of the array class 'Cars' so this can be printed in the terminal.
+> ***Cars*** class.
+> > Public class has the layout to fill the information needed, all variables are set as private to avoid the user to directly access to them. Part of the implementation is to implement some getters & setters to access the information.
 > 
-> *StateMachine* class is a simple file to make use of a Moore State Machine to make this program more automated. This while using a switch case to make the state machine go through, in this example the only use of the state machine class is to limit the possible jumps that can be done in the switch case (most simple state machine)
+> ***StateMachine*** class.
+> > File to make use of a Moore State Machine to make this program more automated. This while using a switch case to make the state machine go through, in this example the only use of the state machine class is to limit the possible jumps that can be done in the switch case (most simple state machine)
 > 
 > 
 > The usage of a state machin was primarly to continue learning java, as the implementation of a state machine can be re-used for other coding exercises for a more clean and controlled system.
