@@ -56,14 +56,6 @@ public class Manufacture extends Vehicle
         return varCarType;
     }
 
-    public int getVarCarEngineVolume() {
-        return varCarEngineVolume;
-    }
-
-    public int getVarCarBatteryDistance() {
-        return varCarBatteryDistance;
-    }
-
     public void setVarCarsId(int varCarsId) {
         this.varCarsId = varCarsId;
     }
@@ -94,14 +86,6 @@ public class Manufacture extends Vehicle
 
     public void setVarCarType(int varCarType) {
         this.varCarType = varCarType;
-    }
-
-    public void setVarCarEngineVolume(int varCarEngineVolume) {
-        this.varCarEngineVolume = varCarEngineVolume;
-    }
-
-    public void setVarCarBatteryDistance(int varCarBatteryDistance) {
-        this.varCarBatteryDistance = varCarBatteryDistance;
     }
 
     @Override

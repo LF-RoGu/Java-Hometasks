@@ -122,7 +122,6 @@ public class Main {
                                     4. cc850
                                     5. cc1000
                                     """);
-                            l_classManufacturer.setVarCarEngineVolume(Integer.parseInt(l_varScanner.next()));
                         }
                         case 2 ->
                         {
@@ -131,7 +130,6 @@ public class Main {
                                     ---------------------------
                                     Select Battery Distance [km] ->
                                     """);
-                            l_classManufacturer.setVarCarBatteryDistance(Integer.parseInt(l_varScanner.next()));
                         }
                         case 3 ->
                         {
