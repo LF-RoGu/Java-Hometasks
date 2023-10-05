@@ -1,161 +1,156 @@
 abstract public class Vehicle
 {
-    public void ignitionKeyOn()
+    /* Create empty default constructor */
+    public Vehicle()
     {
-        System.out.println("Ignition Key On");
+        System.out.println("Empty constructor called");
     }
-    public void ignitionKeyOf()
-    {
-        System.out.println("Ignition Key Off");
-    }
+
     abstract void showCharacteristics();
-}
 
-class ICEV extends Vehicle
-{
-    private Manufacture l_classManufacture;
-    private CombustionEngine l_classCombustionEngine;
-
-    public ICEV(Manufacture l_classManufacture, CombustionEngine l_classCombustionEngine) {
-        this.l_classManufacture = l_classManufacture;
-        this.l_classCombustionEngine = l_classCombustionEngine;
-    }
-
-    @Override
-    void showCharacteristics()
+    static class ICEV extends Vehicle
     {
-        System.out.println("--------------------------------------------");
-        
-        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
-        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
-        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
-        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
-        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
-        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
-        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
+        private Manufacture l_classManufacture;
+        private CombustionEngine l_classCombustionEngine;
 
-        System.out.println("-> Vehicle Type Characteristics... ICEV");
-        System.out.println("-> Vehicle RPM Characteristics... " +  l_classCombustionEngine.get_intEngineRPM());
-        System.out.println("-> Vehicle Torque Characteristics... " +  l_classCombustionEngine.get_intEngineTorque());
-        System.out.println("-> Vehicle Engine Characteristics... " +  l_classCombustionEngine.get_floatEngineSize() + " cm");
+        public ICEV(Manufacture l_classManufacture, CombustionEngine l_classCombustionEngine) {
+            this.l_classManufacture = l_classManufacture;
+            this.l_classCombustionEngine = l_classCombustionEngine;
+        }
 
-        switch (l_classCombustionEngine.get_enumCombustionVolType())
+        @Override
+        void showCharacteristics()
         {
-            case cc450 ->
+            System.out.println("--------------------------------------------");
+
+            System.out.println("-> Vehicle ID..." + l_classManufacture.get_intCarsId());
+            System.out.println("-> Vehicle Brand..." + l_classManufacture.get_strCarBrand());
+            System.out.println("-> Vehicle Model..." + l_classManufacture.get_strCarModel());
+            System.out.println("-> Vehicle Year..." + l_classManufacture.get_intCarYear());
+            System.out.println("-> Vehicle Color..." + l_classManufacture.get_strCarColor());
+            System.out.println("-> Vehicle Price ... $" + l_classManufacture.get_intCarPrice());
+            System.out.println("-> Vehicle Registration Number..." + l_classManufacture.get_intCarRegistrationNumber());
+
+            System.out.println("-> Vehicle Type Characteristics... " + l_classManufacture.get_enumVehicleType().toString());
+            System.out.println("-> Vehicle RPM Characteristics... " +  l_classManufacture.get_intCarRPM());
+            System.out.println("-> Vehicle Torque Characteristics... " +  l_classManufacture.get_intCarTorque());
+
+            switch (l_classManufacture.get_enumCombustionVolume())
             {
-                System.out.println("-> Vehicle Engine Volume... 450cc");
-            }
-            case cc500 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 500cc");
-            }
-            case cc600 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 600cc");
-            }
-            case cc850 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 850cc");
-            }
-            case cc1000 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 1000cc");
-            }
-            default ->
-            {
-                System.out.println("-> Vehicle Engine Volume... N.A.");
+                case cc450 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 450cc");
+                }
+                case cc500 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 500cc");
+                }
+                case cc600 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 600cc");
+                }
+                case cc850 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 850cc");
+                }
+                case cc1000 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 1000cc");
+                }
+                default ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... N.A.");
+                }
             }
         }
     }
-}
 
-class BEV extends Vehicle
-{
-    private Manufacture l_classManufacture;
-    private ElectricEngine l_classElectricEngine;
-
-    public BEV(Manufacture l_classManufacture, ElectricEngine l_classElectricEngine) {
-        this.l_classManufacture = l_classManufacture;
-        this.l_classElectricEngine = l_classElectricEngine;
-    }
-
-    @Override
-    void showCharacteristics()
+    static class BEV extends Vehicle
     {
-        System.out.println("--------------------------------------------");
+        private Manufacture l_classManufacture;
+        private ElectricEngine l_classElectricEngine;
 
-        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
-        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
-        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
-        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
-        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
-        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
-        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
-
-        System.out.println("-> Vehicle Type Characteristics... BEV");
-        System.out.println("-> Vehicle RPM Characteristics... " +  l_classElectricEngine.get_intEngineRPM());
-        System.out.println("-> Vehicle Torque Characteristics... " +  l_classElectricEngine.get_intEngineTorque());
-        System.out.println("-> Vehicle Engine Characteristics... " +  l_classElectricEngine.get_floatEngineSize() + " cm");
-        /* Vehicle Battery Distance */
-        System.out.println("-> Vehicle Battery Distance is... " + l_classElectricEngine.get_intBatteryDistance() + " km");
-    }
-}
-
-class HybridV extends Vehicle
-{
-    private Manufacture l_classManufacture;
-    private HybridEngine l_classHybridEngine;
-
-    public HybridV(Manufacture l_classManufacture, HybridEngine l_classHybridEngine) {
-        this.l_classManufacture = l_classManufacture;
-        this.l_classHybridEngine = l_classHybridEngine;
-    }
-
-    @Override
-    void showCharacteristics()
-    {
-        System.out.println("--------------------------------------------");
-
-        System.out.println("-> Vehicle ID..." + l_classManufacture.getVarCarsId());
-        System.out.println("-> Vehicle Brand..." + l_classManufacture.getVarCarsMake());
-        System.out.println("-> Vehicle Model..." + l_classManufacture.getVarCarModel());
-        System.out.println("-> Vehicle Year..." + l_classManufacture.getVarCarYear());
-        System.out.println("-> Vehicle Color..." + l_classManufacture.getVarCarColor());
-        System.out.println("-> Vehicle Price ... $" + l_classManufacture.getVarCarPrice());
-        System.out.println("-> Vehicle Registration Number..." + l_classManufacture.getVarCarRegistrationNumber());
-
-        System.out.println("-> Vehicle Type Characteristics... HybridV");
-        System.out.println("-> Vehicle RPM Characteristics... " +  l_classHybridEngine.get_intEngineRPM());
-        System.out.println("-> Vehicle Torque Characteristics... " +  l_classHybridEngine.get_intEngineTorque());
-        System.out.println("-> Vehicle Engine Characteristics... " +  l_classHybridEngine.get_floatEngineSize() + " cm");
-        System.out.println("-> Vehicle Battery Distance is... " + l_classHybridEngine.get_classElectricEngine().get_intBatteryDistance() + " km");
-        switch (l_classHybridEngine.get_classCombustionEngine().get_enumCombustionVolType())
-        {
-            case cc450 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 450cc");
-            }
-            case cc500 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 500cc");
-            }
-            case cc600 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 600cc");
-            }
-            case cc850 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 850cc");
-            }
-            case cc1000 ->
-            {
-                System.out.println("-> Vehicle Engine Volume... 1000cc");
-            }
-            default ->
-            {
-                System.out.println("-> Vehicle Engine Volume... N.A.");
-            }
+        public BEV(Manufacture l_classManufacture, ElectricEngine l_classElectricEngine) {
+            this.l_classManufacture = l_classManufacture;
+            this.l_classElectricEngine = l_classElectricEngine;
         }
 
+        @Override
+        void showCharacteristics()
+        {
+            System.out.println("--------------------------------------------");
+
+            System.out.println("-> Vehicle ID..." + l_classManufacture.get_intCarsId());
+            System.out.println("-> Vehicle Brand..." + l_classManufacture.get_strCarBrand());
+            System.out.println("-> Vehicle Model..." + l_classManufacture.get_strCarModel());
+            System.out.println("-> Vehicle Year..." + l_classManufacture.get_intCarYear());
+            System.out.println("-> Vehicle Color..." + l_classManufacture.get_strCarColor());
+            System.out.println("-> Vehicle Price ... $" + l_classManufacture.get_intCarPrice());
+            System.out.println("-> Vehicle Registration Number..." + l_classManufacture.get_intCarRegistrationNumber());
+
+            System.out.println("-> Vehicle Type Characteristics... " + l_classManufacture.get_enumVehicleType().toString());
+            System.out.println("-> Vehicle RPM Characteristics... " +  l_classManufacture.get_intCarRPM());
+            System.out.println("-> Vehicle Torque Characteristics... " +  l_classManufacture.get_intCarTorque());
+            /* Vehicle Battery Distance */
+            System.out.println("-> Vehicle Battery Distance is... " + l_classManufacture.get_intBatteryDistance() + " km");
+        }
+    }
+
+    static class HybridV extends Vehicle
+    {
+        private Manufacture l_classManufacture;
+        private HybridEngine l_classHybridEngine;
+
+        public HybridV(Manufacture l_classManufacture, HybridEngine l_classHybridEngine) {
+            this.l_classManufacture = l_classManufacture;
+            this.l_classHybridEngine = l_classHybridEngine;
+        }
+
+        @Override
+        void showCharacteristics()
+        {
+            System.out.println("--------------------------------------------");
+
+            System.out.println("-> Vehicle ID..." + l_classManufacture.get_intCarsId());
+            System.out.println("-> Vehicle Brand..." + l_classManufacture.get_strCarBrand());
+            System.out.println("-> Vehicle Model..." + l_classManufacture.get_strCarModel());
+            System.out.println("-> Vehicle Year..." + l_classManufacture.get_intCarYear());
+            System.out.println("-> Vehicle Color..." + l_classManufacture.get_strCarColor());
+            System.out.println("-> Vehicle Price ... $" + l_classManufacture.get_intCarPrice());
+            System.out.println("-> Vehicle Registration Number..." + l_classManufacture.get_intCarRegistrationNumber());
+
+            System.out.println("-> Vehicle Type Characteristics... " + l_classManufacture.get_enumVehicleType().toString());
+            System.out.println("-> Vehicle RPM Characteristics... " +  l_classManufacture.get_intCarRPM());
+            System.out.println("-> Vehicle Torque Characteristics... " +  l_classManufacture.get_intCarTorque());
+            System.out.println("-> Vehicle Battery Distance is... " + l_classManufacture.get_intBatteryDistance() + " km");
+            switch (l_classManufacture.get_enumCombustionVolume())
+            {
+                case cc450 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 450cc");
+                }
+                case cc500 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 500cc");
+                }
+                case cc600 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 600cc");
+                }
+                case cc850 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 850cc");
+                }
+                case cc1000 ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... 1000cc");
+                }
+                default ->
+                {
+                    System.out.println("-> Vehicle Engine Volume... N.A.");
+                }
+            }
+
+        }
     }
 }

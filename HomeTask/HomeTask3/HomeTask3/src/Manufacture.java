@@ -1,95 +1,163 @@
-public class Manufacture extends Vehicle
+public class Manufacture
 {
     /*
     All vehicles must have this type of information
      */
-    private int varCarsId;
-    private String varCarsMake;
-    private String varCarModel;
-    private int varCarYear;
-    private String varCarColor;
-    private int varCarPrice;
-    private int varCarRegistrationNumber;
-    private int varCarType;
-    private int varCarEngineVolume;
-    private int varCarBatteryDistance;
-
-    private int varCarUseYears;
-
-    public int getVarCarUseYears() {
-        return varCarUseYears;
+    public enum l_enumVehicle
+    {
+        ICEV,
+        BEV,
+        HybridV
     }
 
-    public void setVarCarUseYears(int varCarUseYears) {
-        this.varCarUseYears = varCarUseYears;
+    public enum l_enumCombustion
+    {
+        No_Engine,
+        cc450,
+        cc500,
+        cc600,
+        cc850,
+        cc1000
     }
 
-    public int getVarCarsId() {
-        return varCarsId;
+    private l_enumVehicle l_enumVehicleType;
+    private int l_intCarsId;
+    private String l_strCarBrand;
+    private String l_strCarModel;
+    private int l_intCarRPM;
+    private int l_intCarTorque;
+    private l_enumCombustion l_enumCombustionVolume;
+    private int l_intBatteryDistance;   // Battery capability in kilometers
+
+    private int l_intCarYear;
+    private String l_strCarColor;
+    private int l_intCarPrice;
+    private int l_intCarRegistrationNumber;
+    private int l_intCarUseYears;
+
+    /* Create empty default constructor */
+    public Manufacture()
+    {
+        System.out.println("Empty constructor called");
     }
 
-    public String getVarCarsMake() {
-        return varCarsMake;
+    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intBatteryDistance, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
+        this.l_enumVehicleType = l_enumVehicleType;
+        this.l_intCarsId = l_intCarsId;
+        this.l_strCarBrand = l_strCarBrand;
+        this.l_strCarModel = l_strCarModel;
+        this.l_intCarRPM = l_intCarRPM;
+        this.l_intCarTorque = l_intCarTorque;
+        this.l_enumCombustionVolume = l_enumCombustionVolume;
+        this.l_intBatteryDistance = l_intBatteryDistance;
+        this.l_intCarYear = l_intCarYear;
+        this.l_strCarColor = l_strCarColor;
+        this.l_intCarPrice = l_intCarPrice;
+        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
+        this.l_intCarUseYears = l_intCarUseYears;
     }
 
-    public String getVarCarModel() {
-        return varCarModel;
+    public void set_enumVehicleType(l_enumVehicle l_enumVehicleType) {
+        this.l_enumVehicleType = l_enumVehicleType;
     }
 
-    public int getVarCarYear() {
-        return varCarYear;
+    public void set_intCarsId(int l_intCarsId) {
+        this.l_intCarsId = l_intCarsId;
     }
 
-    public String getVarCarColor() {
-        return varCarColor;
+    public void set_strCarBrand(String l_strCarBrand) {
+        this.l_strCarBrand = l_strCarBrand;
     }
 
-    public int getVarCarPrice() {
-        return varCarPrice;
+    public void set_strCarModel(String l_strCarModel) {
+        this.l_strCarModel = l_strCarModel;
     }
 
-    public int getVarCarRegistrationNumber() {
-        return varCarRegistrationNumber;
+    public void set_intCarRPM(int l_intCarRPM) {
+        this.l_intCarRPM = l_intCarRPM;
     }
 
-    public int getVarCarType() {
-        return varCarType;
+    public void set_intCarTorque(int l_intCarTorque) {
+        this.l_intCarTorque = l_intCarTorque;
     }
 
-    public void setVarCarsId(int varCarsId) {
-        this.varCarsId = varCarsId;
+    public void set_enumCombustionVolume(l_enumCombustion l_enumCombustionVolume) {
+        this.l_enumCombustionVolume = l_enumCombustionVolume;
     }
 
-    public void setVarCarsMake(String varCarsMake) {
-        this.varCarsMake = varCarsMake;
+    public void set_intBatteryDistance(int l_intBatteryDistance) {
+        this.l_intBatteryDistance = l_intBatteryDistance;
     }
 
-    public void setVarCarModel(String varCarModel) {
-        this.varCarModel = varCarModel;
+    public void set_intCarYear(int l_intCarYear) {
+        this.l_intCarYear = l_intCarYear;
     }
 
-    public void setVarCarYear(int varCarYear) {
-        this.varCarYear = varCarYear;
+    public void set_strCarColor(String l_strCarColor) {
+        this.l_strCarColor = l_strCarColor;
     }
 
-    public void setVarCarColor(String varCarColor) {
-        this.varCarColor = varCarColor;
+    public void set_intCarPrice(int l_intCarPrice) {
+        this.l_intCarPrice = l_intCarPrice;
     }
 
-    public void setVarCarPrice(int varCarPrice) {
-        this.varCarPrice = varCarPrice;
+    public void set_intCarRegistrationNumber(int l_intCarRegistrationNumber) {
+        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
     }
 
-    public void setVarCarRegistrationNumber(int varCarRegistrationNumber) {
-        this.varCarRegistrationNumber = varCarRegistrationNumber;
+    public void set_intCarUseYears(int l_intCarUseYears) {
+        this.l_intCarUseYears = l_intCarUseYears;
     }
 
-    public void setVarCarType(int varCarType) {
-        this.varCarType = varCarType;
+    public l_enumVehicle get_enumVehicleType() {
+        return l_enumVehicleType;
     }
 
-    @Override
-    void showCharacteristics() {
+    public int get_intCarsId() {
+        return l_intCarsId;
+    }
 
+    public String get_strCarBrand() {
+        return l_strCarBrand;
+    }
+
+    public String get_strCarModel() {
+        return l_strCarModel;
+    }
+
+    public int get_intCarRPM() {
+        return l_intCarRPM;
+    }
+
+    public int get_intCarTorque() {
+        return l_intCarTorque;
+    }
+
+    public l_enumCombustion get_enumCombustionVolume() {
+        return l_enumCombustionVolume;
+    }
+
+    public int get_intBatteryDistance() {
+        return l_intBatteryDistance;
+    }
+
+    public int get_intCarYear() {
+        return l_intCarYear;
+    }
+
+    public String get_strCarColor() {
+        return l_strCarColor;
+    }
+
+    public int get_intCarPrice() {
+        return l_intCarPrice;
+    }
+
+    public int get_intCarRegistrationNumber() {
+        return l_intCarRegistrationNumber;
+    }
+
+    public int get_intCarUseYears() {
+        return l_intCarUseYears;
     }
 }
