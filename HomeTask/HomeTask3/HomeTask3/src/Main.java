@@ -19,6 +19,7 @@ public class Main
             BEV,
             HybridV
         }
+        /* Add more VEHICLE_# if more vehicles are needed */
         enum l_enumVehiclesAdded
         {
             VEHICLE_1,
@@ -27,13 +28,21 @@ public class Main
             VEHICLE_4,
             VEHICLE_5
         }
-        /* Total ammount of vehicles to add */
-        int l_intNumberOfVehiclesType = 3;
+
+        /* Lenght of the enum for vehicle types, if more vehicles are to be added to the array */
+        int l_intNumberOfVehiclesType = l_enumVehicles.values().length;
+        /* Total amount of vehicles of each variant to be added */
         int l_intNumberOfVehiclesToAdd = 2;
+        /* Bi-Dimensional array, where:
+        * l_intNumberOfVehiclesType -> Amount of vehicle types
+        * l_intNumberOfVehiclesToAdd -> Amount of vehicles of each variant to add
+        */
         Vehicle[][] l_subClassVehicle = new Vehicle[l_intNumberOfVehiclesType][l_intNumberOfVehiclesToAdd];
 
         /*
         Example for ICEV subclass
+        Manufacture -> Attributes for the vehicle.
+        CombustionEngine -> Attributes received by Manufactured, this is specific for the combustion engine.
          */
         Manufacture l_classManufactureICEV_rio = new Manufacture(Manufacture.l_enumVehicle.ICEV, 203040, "Kia", "Rio", 4000, 115, Manufacture.l_enumCombustion.cc450, 2021, "Red",16750, 807060, 2);
         CombustionEngine l_subClassCombustionEngine = new CombustionEngine(l_classManufactureICEV_rio);
@@ -48,6 +57,8 @@ public class Main
 
         /*
         Example for BEV subclass
+        Manufacture -> Attributes for the vehicle.
+        ElectricEngine -> Attributes received by Manufactured, this is specific for the electricEngine engine.
          */
         Manufacture l_classManufactureBEV_i3 = new Manufacture(Manufacture.l_enumVehicle.BEV, 102030, "BMW", "i3", 4775, 250, 215, 2022, "White",45445, 908070, 1);
         ElectricEngine l_subClassElectricEngine = new ElectricEngine(l_classManufactureBEV_i3);
@@ -57,6 +68,8 @@ public class Main
 
         /*
         Example for HybridV subclass
+        Manufacture -> Attributes for the vehicle.
+        HybridEngine -> Attributes received by Manufactured, this is specific for the Hybrid engine.
          */
         Manufacture l_classManufactureHybridV_530e = new Manufacture(Manufacture.l_enumVehicle.ICEV, 304050, "BMW", "530e", 4000, 420, Manufacture.l_enumCombustion.cc1000, 58, 2023, "Grey",40430, 706050, 1);
         HybridEngine l_subClassHybridEngine = new HybridEngine(l_classManufactureHybridV_530e);
