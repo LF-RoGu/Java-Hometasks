@@ -1,11 +1,5 @@
 abstract public class Vehicle
 {
-    /* Create empty default constructor */
-    public Vehicle()
-    {
-        System.out.println("Empty constructor called");
-    }
-
     abstract void showCharacteristics();
 
     static class ICEV extends Vehicle
@@ -35,33 +29,7 @@ abstract public class Vehicle
             System.out.println("-> Vehicle RPM Characteristics... " +  l_classManufacture.get_intCarRPM());
             System.out.println("-> Vehicle Torque Characteristics... " +  l_classManufacture.get_intCarTorque());
 
-            switch (l_classManufacture.get_enumCombustionVolume())
-            {
-                case cc450 ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... 450cc");
-                }
-                case cc500 ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... 500cc");
-                }
-                case cc600 ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... 600cc");
-                }
-                case cc850 ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... 850cc");
-                }
-                case cc1000 ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... 1000cc");
-                }
-                default ->
-                {
-                    System.out.println("-> Vehicle Engine Volume... N.A.");
-                }
-            }
+            System.out.println("-> Vehicle Engine Volume... N.A.");
         }
     }
 

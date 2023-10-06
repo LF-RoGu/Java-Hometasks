@@ -1,8 +1,8 @@
 public class Manufacture
 {
     /*
-    All vehicles must have this type of information
-     */
+        All vehicles must have this type of information
+         */
     public enum l_enumVehicle
     {
         ICEV,
@@ -27,7 +27,7 @@ public class Manufacture
     private int l_intCarRPM;
     private int l_intCarTorque;
     private l_enumCombustion l_enumCombustionVolume;
-    private int l_intBatteryDistance;   // Battery capability in kilometers
+    private int l_intBatteryLife;   // Battery capability in years
 
     private int l_intCarYear;
     private String l_strCarColor;
@@ -35,13 +35,8 @@ public class Manufacture
     private int l_intCarRegistrationNumber;
     private int l_intCarUseYears;
 
-    /* Create empty default constructor */
-    public Manufacture()
-    {
-        System.out.println("Empty constructor called");
-    }
-
-    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intBatteryDistance, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
+    /* Constructor for ICEV */
+    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
         this.l_enumVehicleType = l_enumVehicleType;
         this.l_intCarsId = l_intCarsId;
         this.l_strCarBrand = l_strCarBrand;
@@ -49,7 +44,38 @@ public class Manufacture
         this.l_intCarRPM = l_intCarRPM;
         this.l_intCarTorque = l_intCarTorque;
         this.l_enumCombustionVolume = l_enumCombustionVolume;
-        this.l_intBatteryDistance = l_intBatteryDistance;
+        this.l_intCarYear = l_intCarYear;
+        this.l_strCarColor = l_strCarColor;
+        this.l_intCarPrice = l_intCarPrice;
+        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
+        this.l_intCarUseYears = l_intCarUseYears;
+    }
+
+    /* Constructor for BEV */
+    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, int l_intBatteryLife, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
+        this.l_enumVehicleType = l_enumVehicleType;
+        this.l_intCarsId = l_intCarsId;
+        this.l_strCarBrand = l_strCarBrand;
+        this.l_strCarModel = l_strCarModel;
+        this.l_intCarRPM = l_intCarRPM;
+        this.l_intCarTorque = l_intCarTorque;
+        this.l_intBatteryLife = l_intBatteryLife;
+        this.l_intCarYear = l_intCarYear;
+        this.l_strCarColor = l_strCarColor;
+        this.l_intCarPrice = l_intCarPrice;
+        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
+        this.l_intCarUseYears = l_intCarUseYears;
+    }
+    /* Constructor for Hybrid */
+    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intBatteryLife, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
+        this.l_enumVehicleType = l_enumVehicleType;
+        this.l_intCarsId = l_intCarsId;
+        this.l_strCarBrand = l_strCarBrand;
+        this.l_strCarModel = l_strCarModel;
+        this.l_intCarRPM = l_intCarRPM;
+        this.l_intCarTorque = l_intCarTorque;
+        this.l_enumCombustionVolume = l_enumCombustionVolume;
+        this.l_intBatteryLife = l_intBatteryLife;
         this.l_intCarYear = l_intCarYear;
         this.l_strCarColor = l_strCarColor;
         this.l_intCarPrice = l_intCarPrice;
@@ -86,7 +112,7 @@ public class Manufacture
     }
 
     public void set_intBatteryDistance(int l_intBatteryDistance) {
-        this.l_intBatteryDistance = l_intBatteryDistance;
+        this.l_intBatteryLife = l_intBatteryDistance;
     }
 
     public void set_intCarYear(int l_intCarYear) {
@@ -138,7 +164,7 @@ public class Manufacture
     }
 
     public int get_intBatteryDistance() {
-        return l_intBatteryDistance;
+        return l_intBatteryLife;
     }
 
     public int get_intCarYear() {
