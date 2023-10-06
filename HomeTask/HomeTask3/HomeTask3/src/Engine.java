@@ -27,12 +27,7 @@ class ElectricEngine extends Engine
 
 class HybridEngine extends Engine
 {
-    private CombustionEngine l_classCombustionEngine;
-    private ElectricEngine l_classElectricEngine;
-
-    public HybridEngine(Manufacture l_classManufactured, CombustionEngine l_classCombustionEngine, ElectricEngine l_classElectricEngine) {
+    public HybridEngine(Manufacture l_classManufactured) {
         super(l_classManufactured);
-        this.l_classCombustionEngine = l_classCombustionEngine;
-        this.l_classElectricEngine = l_classElectricEngine;
     }
 }
