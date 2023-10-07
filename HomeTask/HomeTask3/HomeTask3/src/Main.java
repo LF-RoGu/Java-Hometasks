@@ -2,15 +2,19 @@
 // then press Enter. You can now see whitespace characters in your code.
 /* Import Scanner lib so work can be done in IntelliJ */
 import java.util.Objects;
-import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
-import java.util.Calendar;
 import java.io.IOException;
 
 public class Main
 {
+    public enum l_enumFileCreation
+    {
+        CREATED,
+        EXISTING,
+        ERROR
+    }
     public static void main(String[] args)
     {
         enum l_enumVehicles
@@ -38,6 +42,12 @@ public class Main
         * l_intNumberOfVehiclesToAdd -> Amount of vehicles of each variant to add
         */
         Vehicle[][] l_subClassVehicle = new Vehicle[l_intNumberOfVehiclesType][l_intNumberOfVehiclesToAdd];
+
+        /*
+        Create a folder to send the .txt files
+         */
+        boolean l_boolFolderCreation = false;
+        l_enumFileCreation l_enumFileCreationOption = FolderCreation();
 
         /*
         Example for ICEV subclass
@@ -100,5 +110,175 @@ public class Main
 
         l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.HybridV(l_classManufactureHybridV_530e, l_subClassHybridEngine);
         l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+
+    }
+
+    static l_enumFileCreation FolderCreation()
+    {
+        /* Variable for return possible values */
+        l_enumFileCreation l_varReturnValue = l_enumFileCreation.ERROR;
+        /* getProperty -> is used to obtain the current directory that the project is being executed */
+        String l_strCurrentDir = System.getProperty("user.dir");
+        /* Folder name to separate all the generated '.txt' files */
+        String l_strFolderName = "GenTxt";
+        /* Full new path */
+        String l_strFolderPath = l_strCurrentDir + File.separator + l_strFolderName;
+        /* Object for new folder creation */
+        File l_fldrNewFolder = new File(l_strFolderPath);
+
+        if (!l_fldrNewFolder.exists()) {
+            if (l_fldrNewFolder.mkdirs()) {
+                l_varReturnValue = l_enumFileCreation.CREATED;
+            } else {
+                l_varReturnValue = l_enumFileCreation.ERROR;
+            }
+
+        } else {
+            /* Folder already existing */
+            l_varReturnValue = l_enumFileCreation.EXISTING;
+        }
+        return l_varReturnValue;
+    }
+
+    static l_enumFileCreation CreateFile(Manufacture varManufacture) throws IOException {
+        /* Variable for return possible values */
+        l_enumFileCreation l_varReturnValue = l_enumFileCreation.ERROR;
+        /* getProperty -> is used to obtain the current directory that the project is being executed */
+        String l_strCurrentDir = System.getProperty("user.dir");
+        /* Folder name to separate all the generated '.txt' files */
+        String l_strFolderName = "GenTxt";
+        /* File type extension */
+        String l_strSufix = ".txt";
+        /* Full new path */
+        String l_strFilePath = l_strCurrentDir + File.separator + l_strFolderName + File.separator + varManufacture.get_enumVehicleType().name();
+
+
+        File file2createBrand = new File(l_strFilePath + l_strSufix);
+        if (file2createBrand.createNewFile()) {
+            System.out.println("File created as... " + file2createBrand.getName());
+            try
+            {
+                /*
+                Open file already created to write expected information
+                 */
+                FileWriter file2writeBrand = new FileWriter(l_strFilePath + l_strSufix);
+                /* Create object buffered so multiple information can be stored */
+                BufferedWriter info = new BufferedWriter(file2writeBrand);
+                switch (varManufacture.get_enumVehicleType())
+                {
+                    case ICEV ->
+                    {
+                        /* Add info to buffer and write into file */
+                        info.write("-------------------------------------");
+                        info.newLine();
+                        info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
+                        info.newLine();
+                        info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
+                        info.newLine();
+                        info.write("-> Vehicle Brand... " + varManufacture.get_strCarBrand());
+                        info.newLine();
+                        info.write("-> Vehicle Model... " + varManufacture.get_strCarModel());
+                        info.newLine();
+                        info.write("-> Vehicle RPM... " + Integer.toString(varManufacture.get_intCarRPM()));
+                        info.newLine();
+                        info.write("-> Vehicle Torque... " + Integer.toString(varManufacture.get_intCarTorque()));
+                        info.newLine();
+                        info.write("-> Vehicle Combustion Volume... " + varManufacture.get_enumCombustionVolume().name());
+                        info.newLine();
+                        info.write("-> Vehicle Year... " + Integer.toString(varManufacture.get_intCarYear()));
+                        info.newLine();
+                        info.write("-> Vehicle Color... " + varManufacture.get_strCarColor());
+                        info.newLine();
+                        info.write("-> Vehicle Price... $" + Integer.toString(varManufacture.get_intCarPrice()));
+                        info.newLine();
+                        info.write("-> Vehicle Registration Number... " + Integer.toString(varManufacture.get_intCarRegistrationNumber()));
+                        info.newLine();
+                        info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
+                        info.newLine();
+                    }
+                    case BEV ->
+                    {
+                        /* Add info to buffer and write into file */
+                        info.write("-------------------------------------");
+                        info.newLine();
+                        info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
+                        info.newLine();
+                        info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
+                        info.newLine();
+                        info.write("-> Vehicle Brand... " + varManufacture.get_strCarBrand());
+                        info.newLine();
+                        info.write("-> Vehicle Model... " + varManufacture.get_strCarModel());
+                        info.newLine();
+                        info.write("-> Vehicle RPM... " + Integer.toString(varManufacture.get_intCarRPM()));
+                        info.newLine();
+                        info.write("-> Vehicle Torque... " + Integer.toString(varManufacture.get_intCarTorque()));
+                        info.newLine();
+                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryDistance() + " km");
+                        info.newLine();
+                        info.write("-> Vehicle Year... " + Integer.toString(varManufacture.get_intCarYear()));
+                        info.newLine();
+                        info.write("-> Vehicle Color... " + varManufacture.get_strCarColor());
+                        info.newLine();
+                        info.write("-> Vehicle Price... $" + Integer.toString(varManufacture.get_intCarPrice()));
+                        info.newLine();
+                        info.write("-> Vehicle Registration Number... " + Integer.toString(varManufacture.get_intCarRegistrationNumber()));
+                        info.newLine();
+                        info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
+                        info.newLine();
+                    }
+                    case HybridV ->
+                    {
+                        /* Add info to buffer and write into file */
+                        info.write("-------------------------------------");
+                        info.newLine();
+                        info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
+                        info.newLine();
+                        info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
+                        info.newLine();
+                        info.write("-> Vehicle Brand... " + varManufacture.get_strCarBrand());
+                        info.newLine();
+                        info.write("-> Vehicle Model... " + varManufacture.get_strCarModel());
+                        info.newLine();
+                        info.write("-> Vehicle RPM... " + Integer.toString(varManufacture.get_intCarRPM()));
+                        info.newLine();
+                        info.write("-> Vehicle Torque... " + Integer.toString(varManufacture.get_intCarTorque()));
+                        info.newLine();
+                        info.write("-> Vehicle Combustion Volume... " + varManufacture.get_enumCombustionVolume().name());
+                        info.newLine();
+                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryDistance() + " km");
+                        info.newLine();
+                        info.write("-> Vehicle Year... " + Integer.toString(varManufacture.get_intCarYear()));
+                        info.newLine();
+                        info.write("-> Vehicle Color... " + varManufacture.get_strCarColor());
+                        info.newLine();
+                        info.write("-> Vehicle Price... $" + Integer.toString(varManufacture.get_intCarPrice()));
+                        info.newLine();
+                        info.write("-> Vehicle Registration Number... " + Integer.toString(varManufacture.get_intCarRegistrationNumber()));
+                        info.newLine();
+                        info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
+                        info.newLine();
+                    }
+                    default ->
+                    {
+
+                    }
+                }
+                /* Send info to .txt file and close file */
+                info.close();
+                System.out.println("Successfully write in file " + file2createBrand.getName());
+                l_varReturnValue = l_enumFileCreation.CREATED;
+            }catch (IOException e)
+            {
+                System.out.println("An error ocurred");
+                l_varReturnValue = l_enumFileCreation.ERROR;
+            }
+        } else {
+            System.out.println("File already existed");
+            l_varReturnValue = l_enumFileCreation.EXISTING;
+        }
+
+
+
+        return l_varReturnValue;
     }
 }
