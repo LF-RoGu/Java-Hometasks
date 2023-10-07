@@ -55,7 +55,26 @@ public class Main
         Manufacture -> Attributes for the second vehicle.
         CombustionEngine -> Attributes received by Manufactured, this is specific for the combustion engine.
          */
-        Manufacture l_classManufactureICEV_rioHatchback = new Manufacture(Manufacture.l_enumVehicle.ICEV, 213141, "Kia", "Rio Hatchback", 4000, 115, Manufacture.l_enumCombustion.cc450, 2021, "Red",16750, 807060, 2);
+        /*
+        Here will be shown 2 possible ways of filling up the information needed for the software, one is via a constructor, another is via setters
+         */
+        /* Constructor */
+        //Manufacture l_classManufactureICEV_rioHatchback = new Manufacture(Manufacture.l_enumVehicle.ICEV, 213141, "Kia", "Rio Hatchback", 4000, 115, Manufacture.l_enumCombustion.cc450, 2021, "Red",16750, 807060, 2);
+        /* Setter */
+        Manufacture l_classManufactureICEV_rioHatchback = new Manufacture();
+        l_classManufactureICEV_rioHatchback.set_enumVehicleType(Manufacture.l_enumVehicle.ICEV);
+        l_classManufactureICEV_rioHatchback.set_intCarsId(213141);
+        l_classManufactureICEV_rioHatchback.set_strCarBrand("Kia");
+        l_classManufactureICEV_rioHatchback.set_strCarModel("Rio Hatchback");
+        l_classManufactureICEV_rioHatchback.set_intCarRPM(4000);
+        l_classManufactureICEV_rioHatchback.set_intCarTorque(115);
+        l_classManufactureICEV_rioHatchback.set_enumCombustionVolume(Manufacture.l_enumCombustion.cc450);
+        l_classManufactureICEV_rioHatchback.set_intCarYear(2021);
+        l_classManufactureICEV_rioHatchback.set_strCarColor("Red");
+        l_classManufactureICEV_rioHatchback.set_intCarPrice(16750);
+        l_classManufactureICEV_rioHatchback.set_intCarRegistrationNumber(807060);
+        l_classManufactureICEV_rioHatchback.set_intCarUseYears(2);
+
 
         l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()] = new Vehicle.ICEV(l_classManufactureICEV_rioHatchback, l_subClassCombustionEngine);
         l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()].showCharacteristics();

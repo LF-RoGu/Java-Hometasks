@@ -35,6 +35,9 @@ public class Manufacture
     private int l_intCarRegistrationNumber;
     private int l_intCarUseYears;
 
+    public Manufacture() {
+    }
+
     /* Constructor for ICEV */
     public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
         this.l_enumVehicleType = l_enumVehicleType;
