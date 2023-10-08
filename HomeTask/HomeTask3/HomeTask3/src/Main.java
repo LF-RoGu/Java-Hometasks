@@ -15,8 +15,7 @@ public class Main
         EXISTING,
         ERROR
     }
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         enum l_enumVehicles
         {
             ICEV,
@@ -46,8 +45,9 @@ public class Main
         /*
         Create a folder to send the .txt files
          */
-        boolean l_boolFolderCreation = false;
-        l_enumFileCreation l_enumFileCreationOption = FolderCreation();
+        l_enumFileCreation l_enumFolderCreationOption = FolderCreation();
+        /* Counter to keep track of existing files */
+        int l_intExistingFileCounter = 0;
 
         /*
         Example for ICEV subclass
@@ -59,6 +59,18 @@ public class Main
 
         l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.ICEV(l_classManufactureICEV_rio, l_subClassCombustionEngine);
         l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+
+        /*
+        Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
+        It keeps going unless we get a successful file creation
+         */
+        l_intExistingFileCounter = 0;
+        do
+        {
+            l_intExistingFileCounter++;
+            l_enumFolderCreationOption = CreateFile(l_classManufactureICEV_rio, l_intExistingFileCounter);
+        }while((l_enumFolderCreationOption != l_enumFileCreation.CREATED));
+
 
         /*
         Example for ICEV subclass
@@ -90,6 +102,16 @@ public class Main
         l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()].showCharacteristics();
 
         /*
+        Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
+        It keeps going unless we get a successful file creation
+         */
+        l_intExistingFileCounter = 0;
+        do
+        {
+            l_intExistingFileCounter++;
+            l_enumFolderCreationOption = CreateFile(l_classManufactureICEV_rioHatchback, l_intExistingFileCounter);
+        }while((l_enumFolderCreationOption != l_enumFileCreation.CREATED));
+        /*
         Example for BEV subclass
         Manufacture -> Attributes for the vehicle.
         ElectricEngine -> Attributes received by Manufactured, this is specific for the electricEngine engine.
@@ -101,6 +123,17 @@ public class Main
         l_subClassVehicle[l_enumVehicles.BEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
 
         /*
+        Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
+        It keeps going unless we get a successful file creation
+         */
+        l_intExistingFileCounter = 0;
+        do
+        {
+            l_intExistingFileCounter++;
+            l_enumFolderCreationOption = CreateFile(l_classManufactureBEV_i3, l_intExistingFileCounter);
+        }while((l_enumFolderCreationOption != l_enumFileCreation.CREATED));
+
+        /*
         Example for HybridV subclass
         Manufacture -> Attributes for the vehicle.
         HybridEngine -> Attributes received by Manufactured, this is specific for the Hybrid engine.
@@ -110,6 +143,17 @@ public class Main
 
         l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.HybridV(l_classManufactureHybridV_530e, l_subClassHybridEngine);
         l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+
+        /*
+        Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
+        It keeps going unless we get a successful file creation
+         */
+        l_intExistingFileCounter = 0;
+        do
+        {
+            l_intExistingFileCounter++;
+            l_enumFolderCreationOption = CreateFile(l_classManufactureHybridV_530e, l_intExistingFileCounter);
+        }while((l_enumFolderCreationOption != l_enumFileCreation.CREATED));
 
     }
 
@@ -140,7 +184,8 @@ public class Main
         return l_varReturnValue;
     }
 
-    static l_enumFileCreation CreateFile(Manufacture varManufacture) throws IOException {
+    static l_enumFileCreation CreateFile(Manufacture varManufacture, int varFileCounter) throws IOException
+    {
         /* Variable for return possible values */
         l_enumFileCreation l_varReturnValue = l_enumFileCreation.ERROR;
         /* getProperty -> is used to obtain the current directory that the project is being executed */
@@ -150,11 +195,12 @@ public class Main
         /* File type extension */
         String l_strSufix = ".txt";
         /* Full new path */
-        String l_strFilePath = l_strCurrentDir + File.separator + l_strFolderName + File.separator + varManufacture.get_enumVehicleType().name();
+        String l_strFilePath = l_strCurrentDir + File.separator + l_strFolderName + File.separator + varManufacture.get_enumVehicleType().name() + Integer.toString(varFileCounter);
 
 
         File file2createBrand = new File(l_strFilePath + l_strSufix);
-        if (file2createBrand.createNewFile()) {
+        if (file2createBrand.createNewFile())
+        {
             System.out.println("File created as... " + file2createBrand.getName());
             try
             {
@@ -260,7 +306,8 @@ public class Main
                     }
                     default ->
                     {
-
+                        System.out.println("An error ocurred");
+                        l_varReturnValue = l_enumFileCreation.ERROR;
                     }
                 }
                 /* Send info to .txt file and close file */
@@ -272,13 +319,11 @@ public class Main
                 System.out.println("An error ocurred");
                 l_varReturnValue = l_enumFileCreation.ERROR;
             }
-        } else {
+        } else
+        {
             System.out.println("File already existed");
             l_varReturnValue = l_enumFileCreation.EXISTING;
         }
-
-
-
         return l_varReturnValue;
     }
 }
