@@ -26,21 +26,16 @@ public class Main
         enum l_enumVehiclesAdded
         {
             VEHICLE_1,
-            VEHICLE_2,
-            VEHICLE_3,
-            VEHICLE_4,
-            VEHICLE_5
+            VEHICLE_2
         }
 
         /* Lenght of the enum for vehicle types, if more vehicles are to be added to the array */
         int l_intNumberOfVehiclesType = l_enumVehicles.values().length;
-        /* Total amount of vehicles of each variant to be added */
-        int l_intNumberOfVehiclesToAdd = 2;
         /* Bi-Dimensional array, where:
         * l_intNumberOfVehiclesType -> Amount of vehicle types
         * l_intNumberOfVehiclesToAdd -> Amount of vehicles of each variant to add
         */
-        Vehicle[][] l_subClassVehicle = new Vehicle[l_intNumberOfVehiclesType][l_intNumberOfVehiclesToAdd];
+        Vehicle[][] l_subClassVehicle = new Vehicle[l_intNumberOfVehiclesType][l_enumVehiclesAdded.values().length];
 
         /*
         Create a folder to send the .txt files
@@ -138,7 +133,7 @@ public class Main
         Manufacture -> Attributes for the vehicle.
         HybridEngine -> Attributes received by Manufactured, this is specific for the Hybrid engine.
          */
-        Manufacture l_classManufactureHybridV_530e = new Manufacture(Manufacture.l_enumVehicle.ICEV, 304050, "BMW", "530e", 4000, 420, Manufacture.l_enumCombustion.cc1000, 58, 2023, "Grey",40430, 706050, 1);
+        Manufacture l_classManufactureHybridV_530e = new Manufacture(Manufacture.l_enumVehicle.HybridV, 304050, "BMW", "530e", 4000, 420, Manufacture.l_enumCombustion.cc1000, 58, 2023, "Grey",40430, 706050, 1);
         HybridEngine l_subClassHybridEngine = new HybridEngine(l_classManufactureHybridV_530e);
 
         l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.HybridV(l_classManufactureHybridV_530e, l_subClassHybridEngine);
