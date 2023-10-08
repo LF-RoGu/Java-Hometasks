@@ -1,5 +1,5 @@
 
-# Java Home Task #2
+# Java Home Task #3
 
 IDE -> IntelliJ
 
@@ -42,35 +42,24 @@ IDE -> IntelliJ
 
 
 How to run the program:
-1. Select the number if cars to add to a list
-2. Enter the information in the following order
-   
-   a) Brand (Ford, Honda, BMW, etc...)
- 
-   b) ID (Numbers Only)
- 
-   c) Model (Civic, ATV, Ryker, Pick up)
- 
-   d) Year of manufacture (YYYY)
- 
-   e) Color (RED, BLUE, etc)
- 
-   f) Price (Insert the number directly, without comas)
- 
-   g) Registration number (Numbers Only)
- 
-   h) Repeat until the amount of cars has been completed.
- 
-4. Select on how do you want the list to be created according to the information provided.
-   
-   a) List of cars given by a Brand (Ford, Honda, BMW, etc...)
+To add information to the program there are 2 ways on how it was implemented, through **constructors** or **setters**.
+1. Select how many vehicle do you want to add in one go. This through the enum **l_enumVehiclesAdded**, just add how many vehicles are to be added in the data type.
+2. Create one class **Manufactured** for each of the vehicles to be added, via the constructor or setters and getters
+> [!Note]
+> Current name of variable to add information **l_subClassVehicle**.
 
-   b) List of cars given by a model that has been in use for 'n' years
- 
-   c) List of cars given by year of manufacturer
- 
-   d) List of cars given by price, highest to lowest.
-
+3. Add another subclass for **Engine**. This should have as an input for the constructor the class **Manufactured**
+4. Add the information in the subclass corresponding to **Vehicle** (an array has already been created and automated to however many vehicles are to be added).
+> [!Note]
+> In ***Main.java*** there is already an example using both methods.
+> > How to use:
+> > l_subClassVehicle[**Vehicle Variant**] [**Number of vehicle**] = new Vehicle.**Vehicle Variant**(Constructor information)
+> > Vehicle Variant -> This is from the enum **l_enumVehicles**, add vehicle type, as there is a row for each vehicle type.
+> > Number of vehicle -> This is from the enum **l_enumVehiclesAdded**, add corresponding number of vehicle for each vehicle type.
+> > Constructor information -> This is to add the subclasses/classes already created in the following order (**Manufactured**, **Engine**)
+> >
+5. To show all the vehicle information, just call the method **showCharacteristics**. For each of the vehicle variants, it will display different information.
+6. At the end of the program, a file ***.txt*** will be stored in a folder named **GenTxt**. This will be in the same path where the program wil be executed.
 
  
  
@@ -78,8 +67,9 @@ How to run the program:
 > 
 > This implementation was done through 3 total classes.
 > * Main
-> * Cars
-> * StateMachine
+> * Manufacture
+> * Engine
+> * Vehicles
 > 
 > ***Main*** class.
 > > File where the implementation is run. Here the definition of the participants information was set and the objects of the other classes (Participants.java & StateMachine.java) where created.
@@ -91,11 +81,21 @@ How to run the program:
 > > The system asks the user how it wants the information to be stored. (This is according to the HomeTask2 req)
 > > After the files are created successfully then the program comes to an end.
 > 
-> ***Cars*** class.
+> 
+> ***Manufacture*** class.
 > > Public class has the layout to fill the information needed, all variables are set as private to avoid the user to directly access to them. Part of the implementation is to implement some getters & setters to access the information.
-> 
-> ***StateMachine*** class.
-> > File to make use of a Moore State Machine to make this program more automated. This while using a switch case to make the state machine go through, in this example the only use of the state machine class is to limit the possible jumps that can be done in the switch case (most simple state machine)
-> 
-> 
-> The usage of a state machin was primarly to continue learning java, as the implementation of a state machine can be re-used for other coding exercises for a more clean and controlled system.
+>
+> ***Engine*** class.
+> > Public class to set the information about the engine. In this class, 3 subclasses where created as per requirement. Each of this subclasses receives the information they need from the class *Manufactured*, since this should have all the setters and getters in this program.
+> > *CombustionEngine*
+> > *ElectricEngine*
+> > *HybridEngine*
+>
+> ***Vehicles*** class.
+> > Public class that will receive the information both from *engine* and *manufactured* as a parameter. In this class, 3 subclasses where created as per requirement. Each of this subclasses receives the information they need from the class *Manufactured* & *Engine*, since this should have all the setters and getters in this program.
+> > *ICEV*
+> > *BEV*
+> > *HybridV*
+> >
+> > Each of this subclasses receives a different subclass for engine, as there are personalized options for each vehicle type.
+> > Each of this subclasses has an @override method named *showCharacteristics*. This method is used to show through the terminal all the information about each vehicle. This once again, through the *Manufactured* class, as all setters and **getters* are to be in that class.
