@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
-!**/GenTxt/
+GenTxt/
 
 ### Eclipse ###
 .apt_generated
