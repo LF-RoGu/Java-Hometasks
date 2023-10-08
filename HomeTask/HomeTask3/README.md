@@ -41,25 +41,27 @@ IDE -> IntelliJ
 
 
 
-How to run the program:
-To add information to the program there are 2 ways on how it was implemented, through **constructors** or **setters**.
-1. Select how many vehicle do you want to add in one go. This through the enum **l_enumVehiclesAdded**, just add how many vehicles are to be added in the data type.
-2. Create one class **Manufactured** for each of the vehicles to be added, via the constructor or setters and getters
-> [!Note]
-> Current name of variable to add information **l_subClassVehicle**.
 
-3. Add another subclass for **Engine**. This should have as an input for the constructor the class **Manufactured**
-4. Add the information in the subclass corresponding to **Vehicle** (an array has already been created and automated to however many vehicles are to be added).
-> [!Note]
-> In ***Main.java*** there is already an example using both methods.
-> > How to use:
-> > l_subClassVehicle[**Vehicle Variant**] [**Number of vehicle**] = new Vehicle.**Vehicle Variant**(Constructor information)
-> > Vehicle Variant -> This is from the enum **l_enumVehicles**, add vehicle type, as there is a row for each vehicle type.
-> > Number of vehicle -> This is from the enum **l_enumVehiclesAdded**, add corresponding number of vehicle for each vehicle type.
-> > Constructor information -> This is to add the subclasses/classes already created in the following order (**Manufactured**, **Engine**)
-> >
-5. To show all the vehicle information, just call the method **showCharacteristics**. For each of the vehicle variants, it will display different information.
-6. At the end of the program, a file ***.txt*** will be stored in a folder named **GenTxt**. This will be in the same path where the program wil be executed.
+> How to run the program:
+> 
+> To add information to the program there are 2 ways on how it was implemented, through **constructors** or **setters**.
+> 1. Select how many vehicle do you want to add in one go. This through the enum **l_enumVehiclesAdded**, just add how many vehicles are to be added in the data type.
+> 2. Create one class **Manufactured** for each of the vehicles to be added, via the constructor or setters and getters
+> > [!Note]
+> > Current name of variable to add information **l_subClassVehicle**.
+> 
+> 3. Add another subclass for **Engine**. This should have as an input for the constructor the class **Manufactured**
+> 4. Add the information in the subclass corresponding to **Vehicle** (an array has already been created and automated to however many vehicles are to be added).
+> > [!Note]
+> > In ***Main.java*** there is already an example using both methods.
+> > > How to use:
+> > > l_subClassVehicle[**Vehicle Variant**] [**Number of vehicle**] = new Vehicle.**Vehicle Variant**(Constructor information)
+> > > Vehicle Variant -> This is from the enum **l_enumVehicles**, add vehicle type, as there is a row for each vehicle type.
+> > > Number of vehicle -> This is from the enum **l_enumVehiclesAdded**, add corresponding number of vehicle for each vehicle type.
+> > > Constructor information -> This is to add the subclasses/classes already created in the following order (**Manufactured**, **Engine**)
+> > >
+> 5. To show all the vehicle information, just call the method **showCharacteristics**. For each of the vehicle variants, it will display different information.
+> 6. At the end of the program, a file ***.txt*** will be stored in a folder named **GenTxt**. This will be in the same path where the program wil be executed.
 
  
  
