@@ -338,7 +338,7 @@ public class Main {
                     }
                 }
                 case 4 -> {
-                    System.out.println("Enter which Year to filter...");
+                    System.out.println("Enter which Price to filter...");
                     l_strPrice = l_varScanner.next();
 
                     File file2createPrice = new File("E:\\Java_WorkSpace\\Java\\HomeTask2\\HomeTask2\\HomeTaskFiles\\carPrice.txt");
@@ -353,7 +353,7 @@ public class Main {
                             BufferedWriter info = new BufferedWriter(file2WritePrice);
                             while(l_varObjLenght < varObjLenght)
                             {
-                                if(Objects.equals(l_strPrice, Integer.toString(strText[l_varObjLenght].getVarCarPrice())))
+                                if( (strText[l_varObjLenght].getVarCarPrice()) >= (Integer.parseInt(l_strPrice)) )
                                 {
                                     info.write("-------------------------------------");
                                     info.newLine();
