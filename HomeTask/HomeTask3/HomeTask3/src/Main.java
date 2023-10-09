@@ -49,11 +49,10 @@ public class Main
         Manufacture -> Attributes for the vehicle.
         CombustionEngine -> Attributes received by Manufactured, this is specific for the combustion engine.
          */
-        Manufacture l_classManufactureICEV_rio = new Manufacture(Manufacture.l_enumVehicle.ICEV, 203040, "Kia", "Rio", 4000, 115, Manufacture.l_enumCombustion.cc450, 2021, "Red",16750, 807060, 2);
-        CombustionEngine l_subClassCombustionEngine = new CombustionEngine(l_classManufactureICEV_rio);
-
-        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.ICEV(l_classManufactureICEV_rio, l_subClassCombustionEngine);
-        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+        Manufacture l_classManufactureICEV_rio = new Manufacture(203040, "Kia", "Rio", 2021, "Red", 16750, 807060, 2);
+        CombustionEngine l_subClassCombustionEngine = new CombustionEngine(4000, 115, Engine.l_enumCombustion.cc450, 4, Engine.l_enumEngineType.V_Engine, l_classManufactureICEV_rio);
+        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.ICEV(true, 4,5, Vehicle.l_enumVehicle.ICEV, l_subClassCombustionEngine, l_classManufactureICEV_rio);
+        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics(l_classManufactureICEV_rio);
 
         /*
         Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
@@ -72,29 +71,11 @@ public class Main
         Manufacture -> Attributes for the second vehicle.
         CombustionEngine -> Attributes received by Manufactured, this is specific for the combustion engine.
          */
-        /*
-        Here will be shown 2 possible ways of filling up the information needed for the software, one is via a constructor, another is via setters
-         */
-        /* Constructor */
-        //Manufacture l_classManufactureICEV_rioHatchback = new Manufacture(Manufacture.l_enumVehicle.ICEV, 213141, "Kia", "Rio Hatchback", 4000, 115, Manufacture.l_enumCombustion.cc450, 2021, "Red",16750, 807060, 2);
-        /* Setter */
-        Manufacture l_classManufactureICEV_rioHatchback = new Manufacture();
-        l_classManufactureICEV_rioHatchback.set_enumVehicleType(Manufacture.l_enumVehicle.ICEV);
-        l_classManufactureICEV_rioHatchback.set_intCarsId(213141);
-        l_classManufactureICEV_rioHatchback.set_strCarBrand("Kia");
-        l_classManufactureICEV_rioHatchback.set_strCarModel("Rio Hatchback");
-        l_classManufactureICEV_rioHatchback.set_intCarRPM(4000);
-        l_classManufactureICEV_rioHatchback.set_intCarTorque(115);
-        l_classManufactureICEV_rioHatchback.set_enumCombustionVolume(Manufacture.l_enumCombustion.cc450);
-        l_classManufactureICEV_rioHatchback.set_intCarYear(2021);
-        l_classManufactureICEV_rioHatchback.set_strCarColor("Red");
-        l_classManufactureICEV_rioHatchback.set_intCarPrice(16750);
-        l_classManufactureICEV_rioHatchback.set_intCarRegistrationNumber(807060);
-        l_classManufactureICEV_rioHatchback.set_intCarUseYears(2);
+        Manufacture l_classManufactureICEV_rioHatchback = new Manufacture(213141, "Kia", "Rio Hatchback", 2021, "Red", 16750, 817161, 2);
+        CombustionEngine l_subClassCombustionEngineHatchback = new CombustionEngine(4000, 115, Engine.l_enumCombustion.cc450, 4, Engine.l_enumEngineType.V_Engine, l_classManufactureICEV_rioHatchback);
 
-
-        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()] = new Vehicle.ICEV(l_classManufactureICEV_rioHatchback, l_subClassCombustionEngine);
-        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()].showCharacteristics();
+        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()] = new Vehicle.ICEV(true, 4,5, Vehicle.l_enumVehicle.ICEV, l_subClassCombustionEngineHatchback, l_classManufactureICEV_rioHatchback);
+        l_subClassVehicle[l_enumVehicles.ICEV.ordinal()][l_enumVehiclesAdded.VEHICLE_2.ordinal()].showCharacteristics(l_classManufactureICEV_rioHatchback);
 
         /*
         Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
@@ -111,11 +92,11 @@ public class Main
         Manufacture -> Attributes for the vehicle.
         ElectricEngine -> Attributes received by Manufactured, this is specific for the electricEngine engine.
          */
-        Manufacture l_classManufactureBEV_i3 = new Manufacture(Manufacture.l_enumVehicle.BEV, 102030, "BMW", "i3", 4775, 250, 215, 2022, "White",45445, 908070, 1);
-        ElectricEngine l_subClassElectricEngine = new ElectricEngine(l_classManufactureBEV_i3);
+        Manufacture l_classManufactureBEV_i3 = new Manufacture(102030, "BMW", "i3", 2022, "White", 45445, 908070, 1);
+        ElectricEngine l_subClassElectricEngine = new ElectricEngine(4775, 250, 215, true, true, l_classManufactureBEV_i3);
 
-        l_subClassVehicle[l_enumVehicles.BEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.BEV(l_classManufactureBEV_i3, l_subClassElectricEngine);
-        l_subClassVehicle[l_enumVehicles.BEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+        l_subClassVehicle[l_enumVehicles.BEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.BEV(true, 4, 5, Vehicle.l_enumVehicle.BEV, l_subClassElectricEngine, l_classManufactureBEV_i3);
+        l_subClassVehicle[l_enumVehicles.BEV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics(l_classManufactureBEV_i3);
 
         /*
         Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
@@ -133,11 +114,10 @@ public class Main
         Manufacture -> Attributes for the vehicle.
         HybridEngine -> Attributes received by Manufactured, this is specific for the Hybrid engine.
          */
-        Manufacture l_classManufactureHybridV_530e = new Manufacture(Manufacture.l_enumVehicle.HybridV, 304050, "BMW", "530e", 4000, 420, Manufacture.l_enumCombustion.cc1000, 58, 2023, "Grey",40430, 706050, 1);
-        HybridEngine l_subClassHybridEngine = new HybridEngine(l_classManufactureHybridV_530e);
-
-        l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.HybridV(l_classManufactureHybridV_530e, l_subClassHybridEngine);
-        l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics();
+        Manufacture l_classManufactureHybridV_530e = new Manufacture(304050, "BMW", "530e", 2023, "Grey", 40430, 706050, 1);
+        HybridEngine l_subClassHybridEngine = new HybridEngine(4775, 250, Engine.l_enumCombustion.cc850, 6, Engine.l_enumEngineType.Wankel, 105, true, true, l_classManufactureHybridV_530e);
+        l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()] = new Vehicle.HybridV(false, 4, 5, Vehicle.l_enumVehicle.HybridV, l_subClassHybridEngine, l_classManufactureHybridV_530e);
+        l_subClassVehicle[l_enumVehicles.HybridV.ordinal()][l_enumVehiclesAdded.VEHICLE_1.ordinal()].showCharacteristics(l_classManufactureHybridV_530e);
 
         /*
         Logic for creating the files into folder, in this logic a counter is reset before entering (this for each code iteration)
@@ -214,6 +194,10 @@ public class Main
                         info.newLine();
                         info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
                         info.newLine();
+                        info.write("-> Vehicle has " +  Integer.toString(varManufacture.get_intCylinders()) + " Cylinders");
+                        info.newLine();
+                        info.write("-> Vehicle Engine Type...  " +  varManufacture.get_enumEngineType().name());
+                        info.newLine();
                         info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
                         info.newLine();
                         info.write("-> Vehicle Brand... " + varManufacture.get_strCarBrand());
@@ -235,6 +219,12 @@ public class Main
                         info.write("-> Vehicle Registration Number... " + Integer.toString(varManufacture.get_intCarRegistrationNumber()));
                         info.newLine();
                         info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
+                        info.newLine();
+                        info.write("-> Vehicle has " +  Integer.toString(varManufacture.get_intNumDoors()) + " Doors");
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolSunRoof() ? ("has"):("does not have")) + " SunRoof" );
+                        info.newLine();
+                        info.write("-> Vehicle can carry...  " +  Integer.toString(varManufacture.get_intNumPassengers()) + " Passengers");
                         info.newLine();
                     }
                     case BEV ->
@@ -244,6 +234,10 @@ public class Main
                         info.newLine();
                         info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
                         info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolGenerator() ? ("has"):("does not have")) + " Generator" );
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolConverter() ? ("has"):("does not have")) + " Converter" );
+                        info.newLine();
                         info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
                         info.newLine();
                         info.write("-> Vehicle Brand... " + varManufacture.get_strCarBrand());
@@ -254,7 +248,7 @@ public class Main
                         info.newLine();
                         info.write("-> Vehicle Torque... " + Integer.toString(varManufacture.get_intCarTorque()));
                         info.newLine();
-                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryDistance() + " km");
+                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryLife() + " km");
                         info.newLine();
                         info.write("-> Vehicle Year... " + Integer.toString(varManufacture.get_intCarYear()));
                         info.newLine();
@@ -266,6 +260,12 @@ public class Main
                         info.newLine();
                         info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
                         info.newLine();
+                        info.write("-> Vehicle has " +  Integer.toString(varManufacture.get_intNumDoors()) + " Doors");
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolSunRoof() ? ("has"):("does not have")) + " SunRoof" );
+                        info.newLine();
+                        info.write("-> Vehicle can carry...  " +  Integer.toString(varManufacture.get_intNumPassengers()) + " Passengers");
+                        info.newLine();
                     }
                     case HybridV ->
                     {
@@ -273,6 +273,14 @@ public class Main
                         info.write("-------------------------------------");
                         info.newLine();
                         info.write("-> Vehicle Type... " + varManufacture.get_enumVehicleType().name());
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolGenerator() ? ("has"):("does not have")) + " Generator" );
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolConverter() ? ("has"):("does not have")) + " Converter" );
+                        info.newLine();
+                        info.write("-> Vehicle has " +  Integer.toString(varManufacture.get_intCylinders()) + " Cylinders");
+                        info.newLine();
+                        info.write("-> Vehicle Engine Type...  " +  varManufacture.get_enumEngineType().name());
                         info.newLine();
                         info.write("-> Vehicle ID... " + Integer.toString(varManufacture.get_intCarsId()));
                         info.newLine();
@@ -286,7 +294,7 @@ public class Main
                         info.newLine();
                         info.write("-> Vehicle Combustion Volume... " + varManufacture.get_enumCombustionVolume().name());
                         info.newLine();
-                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryDistance() + " km");
+                        info.write("-> Vehicle Battery Distance... " + varManufacture.get_intBatteryLife() + " km");
                         info.newLine();
                         info.write("-> Vehicle Year... " + Integer.toString(varManufacture.get_intCarYear()));
                         info.newLine();
@@ -297,6 +305,12 @@ public class Main
                         info.write("-> Vehicle Registration Number... " + Integer.toString(varManufacture.get_intCarRegistrationNumber()));
                         info.newLine();
                         info.write("-> Vehicle used years... " + Integer.toString(varManufacture.get_intCarUseYears()));
+                        info.newLine();
+                        info.write("-> Vehicle has " +  Integer.toString(varManufacture.get_intNumDoors()) + " Doors");
+                        info.newLine();
+                        info.write("-> Vehicle " +  (varManufacture.get_boolSunRoof() ? ("has"):("does not have")) + " SunRoof" );
+                        info.newLine();
+                        info.write("-> Vehicle can carry...  " +  Integer.toString(varManufacture.get_intNumPassengers()) + " Passengers");
                         info.newLine();
                     }
                     default ->

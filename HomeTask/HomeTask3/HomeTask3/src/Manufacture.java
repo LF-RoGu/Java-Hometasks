@@ -1,32 +1,18 @@
 public class Manufacture
 {
     /*
-        All vehicles must have this type of information
-         */
-    public enum l_enumVehicle
-    {
-        ICEV,
-        BEV,
-        HybridV
-    }
+    All vehicles must have this type of information
+    */
 
-    public enum l_enumCombustion
-    {
-        No_Engine,
-        cc450,
-        cc500,
-        cc600,
-        cc850,
-        cc1000
-    }
-
-    private l_enumVehicle l_enumVehicleType;
+    private Vehicle.l_enumVehicle l_enumVehicleType;
     private int l_intCarsId;
     private String l_strCarBrand;
     private String l_strCarModel;
     private int l_intCarRPM;
     private int l_intCarTorque;
-    private l_enumCombustion l_enumCombustionVolume;
+    private int l_intCylinders;
+    private Engine.l_enumEngineType l_enumEngineType; //Wankel, V, In-Line
+    private Engine.l_enumCombustion l_enumCombustionVolume;
     private int l_intBatteryLife;   // Battery capability in years
 
     private int l_intCarYear;
@@ -34,19 +20,20 @@ public class Manufacture
     private int l_intCarPrice;
     private int l_intCarRegistrationNumber;
     private int l_intCarUseYears;
+    private boolean l_boolGenerator;
+    private boolean l_boolConverter;
+
+    private boolean l_boolSunRoof;
+    private int l_intNumDoors;
+    private int l_intNumPassengers;
 
     public Manufacture() {
     }
 
-    /* Constructor for ICEV */
-    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
-        this.l_enumVehicleType = l_enumVehicleType;
+    public Manufacture(int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
         this.l_intCarsId = l_intCarsId;
         this.l_strCarBrand = l_strCarBrand;
         this.l_strCarModel = l_strCarModel;
-        this.l_intCarRPM = l_intCarRPM;
-        this.l_intCarTorque = l_intCarTorque;
-        this.l_enumCombustionVolume = l_enumCombustionVolume;
         this.l_intCarYear = l_intCarYear;
         this.l_strCarColor = l_strCarColor;
         this.l_intCarPrice = l_intCarPrice;
@@ -54,39 +41,7 @@ public class Manufacture
         this.l_intCarUseYears = l_intCarUseYears;
     }
 
-    /* Constructor for BEV */
-    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, int l_intBatteryLife, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
-        this.l_enumVehicleType = l_enumVehicleType;
-        this.l_intCarsId = l_intCarsId;
-        this.l_strCarBrand = l_strCarBrand;
-        this.l_strCarModel = l_strCarModel;
-        this.l_intCarRPM = l_intCarRPM;
-        this.l_intCarTorque = l_intCarTorque;
-        this.l_intBatteryLife = l_intBatteryLife;
-        this.l_intCarYear = l_intCarYear;
-        this.l_strCarColor = l_strCarColor;
-        this.l_intCarPrice = l_intCarPrice;
-        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
-        this.l_intCarUseYears = l_intCarUseYears;
-    }
-    /* Constructor for Hybrid */
-    public Manufacture(l_enumVehicle l_enumVehicleType, int l_intCarsId, String l_strCarBrand, String l_strCarModel, int l_intCarRPM, int l_intCarTorque, l_enumCombustion l_enumCombustionVolume, int l_intBatteryLife, int l_intCarYear, String l_strCarColor, int l_intCarPrice, int l_intCarRegistrationNumber, int l_intCarUseYears) {
-        this.l_enumVehicleType = l_enumVehicleType;
-        this.l_intCarsId = l_intCarsId;
-        this.l_strCarBrand = l_strCarBrand;
-        this.l_strCarModel = l_strCarModel;
-        this.l_intCarRPM = l_intCarRPM;
-        this.l_intCarTorque = l_intCarTorque;
-        this.l_enumCombustionVolume = l_enumCombustionVolume;
-        this.l_intBatteryLife = l_intBatteryLife;
-        this.l_intCarYear = l_intCarYear;
-        this.l_strCarColor = l_strCarColor;
-        this.l_intCarPrice = l_intCarPrice;
-        this.l_intCarRegistrationNumber = l_intCarRegistrationNumber;
-        this.l_intCarUseYears = l_intCarUseYears;
-    }
-
-    public void set_enumVehicleType(l_enumVehicle l_enumVehicleType) {
+    public void set_enumVehicleType(Vehicle.l_enumVehicle l_enumVehicleType) {
         this.l_enumVehicleType = l_enumVehicleType;
     }
 
@@ -110,12 +65,20 @@ public class Manufacture
         this.l_intCarTorque = l_intCarTorque;
     }
 
-    public void set_enumCombustionVolume(l_enumCombustion l_enumCombustionVolume) {
+    public void set_intCylinders(int l_intCylinders) {
+        this.l_intCylinders = l_intCylinders;
+    }
+
+    public void set_enumEngineType(Engine.l_enumEngineType l_enumEngineType) {
+        this.l_enumEngineType = l_enumEngineType;
+    }
+
+    public void set_enumCombustionVolume(Engine.l_enumCombustion l_enumCombustionVolume) {
         this.l_enumCombustionVolume = l_enumCombustionVolume;
     }
 
-    public void set_intBatteryDistance(int l_intBatteryDistance) {
-        this.l_intBatteryLife = l_intBatteryDistance;
+    public void set_intBatteryLife(int l_intBatteryLife) {
+        this.l_intBatteryLife = l_intBatteryLife;
     }
 
     public void set_intCarYear(int l_intCarYear) {
@@ -138,7 +101,27 @@ public class Manufacture
         this.l_intCarUseYears = l_intCarUseYears;
     }
 
-    public l_enumVehicle get_enumVehicleType() {
+    public void set_boolGenerator(boolean l_boolGenerator) {
+        this.l_boolGenerator = l_boolGenerator;
+    }
+
+    public void set_boolConverter(boolean l_boolConverter) {
+        this.l_boolConverter = l_boolConverter;
+    }
+
+    public void set_boolSunRoof(boolean l_boolSunRoof) {
+        this.l_boolSunRoof = l_boolSunRoof;
+    }
+
+    public void set_intNumDoors(int l_intNumDoors) {
+        this.l_intNumDoors = l_intNumDoors;
+    }
+
+    public void set_intNumPassengers(int l_intNumPassengers) {
+        this.l_intNumPassengers = l_intNumPassengers;
+    }
+
+    public Vehicle.l_enumVehicle get_enumVehicleType() {
         return l_enumVehicleType;
     }
 
@@ -162,11 +145,19 @@ public class Manufacture
         return l_intCarTorque;
     }
 
-    public l_enumCombustion get_enumCombustionVolume() {
+    public int get_intCylinders() {
+        return l_intCylinders;
+    }
+
+    public Engine.l_enumEngineType get_enumEngineType() {
+        return l_enumEngineType;
+    }
+
+    public Engine.l_enumCombustion get_enumCombustionVolume() {
         return l_enumCombustionVolume;
     }
 
-    public int get_intBatteryDistance() {
+    public int get_intBatteryLife() {
         return l_intBatteryLife;
     }
 
@@ -188,5 +179,25 @@ public class Manufacture
 
     public int get_intCarUseYears() {
         return l_intCarUseYears;
+    }
+
+    public boolean get_boolGenerator() {
+        return l_boolGenerator;
+    }
+
+    public boolean get_boolConverter() {
+        return l_boolConverter;
+    }
+
+    public boolean get_boolSunRoof() {
+        return l_boolSunRoof;
+    }
+
+    public int get_intNumDoors() {
+        return l_intNumDoors;
+    }
+
+    public int get_intNumPassengers() {
+        return l_intNumPassengers;
     }
 }
