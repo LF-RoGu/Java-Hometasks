@@ -83,21 +83,72 @@ IDE -> IntelliJ
 > > The system asks the user how it wants the information to be stored. (This is according to the HomeTask2 req)
 > > After the files are created successfully then the program comes to an end.
 > 
-> 
 > ***Manufacture*** class.
 > > Public class has the layout to fill the information needed, all variables are set as private to avoid the user to directly access to them. Part of the implementation is to implement some getters & setters to access the information.
+> > Manufacture class should have the information related to: *Car ID, Car Brand, Car Model, Year of the Car, Car Color, Car Price (without commas or decimal points), Car Registration Number (Decimal Value), Number of years of use*.
+> 
+>  For using this subClasses it is as follow:
+> Manufacture(intCarID, strCarBrand, strCarModel, intCarYear, strCarColor, intCarPrice, intCarRegisNumber, intCarUseYears)
 >
+> 
 > ***Engine*** class.
-> > Public class to set the information about the engine. In this class, 3 subclasses where created as per requirement. Each of this subclasses receives the information they need from the class *Manufactured*, since this should have all the setters and getters in this program.
+> > Public class to set the information about the engine. In this class, 3 subclasses where created as per requirement. Each of the classes receives certain information corresponding to the class name and content that they can logically receives. In the program the class **Manufacture** is used for all the setters and getters, using this class we can add or obtain the information from the vehicles or components of the vehicle.
+> > Engine class should have the information related to: *Engine RPM, Engine Torque, Engine combustion size, Number of Cylinders, Type of engine (Wankel, V-Type, ...) & the class **Manufacture***
+> >
+> > SubClasses:
+> >
 > > *CombustionEngine*
+> >
 > > *ElectricEngine*
+> >
 > > *HybridEngine*
 >
+> 
+> For using this subClasses it is as follow:
+> 
+> CombustionEngine(intCarRPM, intCarTorque, enumCombustion, intCylinders, enumEngineType, **Manufacture Class**)
+> 
+> enumCombustion -> 450cc, 500cc, 600cc, 850cc, 1000cc
+>
+> enumEngineType -> V_Engine, Wankel, In_Line
+>
+> 
+> [!Note]
+> In this case **subClasses** can be access directly as they are an extension of the superclass.
+>
+> 
 > ***Vehicles*** class.
 > > Public class that will receive the information both from *engine* and *manufactured* as a parameter. In this class, 3 subclasses where created as per requirement. Each of this subclasses receives the information they need from the class *Manufactured* & *Engine*, since this should have all the setters and getters in this program.
+> > Vehicles class should have the information related to: *Sun roof (true if it has, false if it does not), Number or doors, Total amount of possible passengers, Vehicle Type (ICEV, BEV, Hybrid)*
+> >
+> > 
+> > SubClasses:
+> > 
 > > *ICEV*
+> > 
+> > SubClass should have the information related to: *CombustionEngine SubClass*
+> > 
 > > *BEV*
+> > 
+> > SubClass should have the information related to: *ElectricEngine SubClass*
+> > 
 > > *HybridV*
+> > 
+> > SubClass should have the information related to: *HybridEngine SubClass*
+> > 
 > >
 > > Each of this subclasses receives a different subclass for engine, as there are personalized options for each vehicle type.
 > > Each of this subclasses has an @override method named *showCharacteristics*. This method is used to show through the terminal all the information about each vehicle. This once again, through the *Manufactured* class, as all setters and **getters* are to be in that class.
+> For using this subClasses it is as follow:
+> > 
+> Vehicle.*VehicleType*(boolSunRoof, intNumDoors, intNumPassengers, enumVehicleType, **Engine subClass**, **Manufacture Class**)
+> 
+> VehicleType -> ICEV, BEV, HybridV
+> 
+> Engine subClass -> CombustionEngine, ElectricEngine, HybridEngine
+> 
+> Manufacture Class -> Manufacture class name
+> 
+> 
+> [!Note]
+> In this case **subClasses** can be access through the main superclass as they where implemented as an static object of the main superclass.
